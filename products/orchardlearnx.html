@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OrchardLearnX | Content Analysis & Customization Platform</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+        :root {
+            --primary-color: #004f6e;
+            --accent-color: #00bcd4;
+            --secondary-red: #EA4335;
+            --primary-blue: #4285F4;
+            --accent-yellow: #FBBC05;
+            --background-dark: #002133;
+            --bg-light: #f8f9fb;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+        @media print {
+  /* Fix header positioning */
+  header {
+    position: relative !important;
+    top: 0 !important;
+  }
+  
+  /* Ensure page breaks occur at logical section boundaries */
+  section {
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+  
+  /* First section should not have a page break */
+  section:first-of-type {
+    page-break-before: avoid;
+  }
+  
+  /* Make carousels display all content */
+  .carousel-wrapper {
+    overflow: visible !important;
+  }
+  
+  .platform-features {
+    transform: none !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .platform-feature-card {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+        .app-logo {
+            height: 95px;
+            object-fit: contain;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        header {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .app-logo {
+            display: flex;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .logo-text-red {
+            color: var(--secondary-red);
+        }
+
+        .logo-text-blue {
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        .request-demo-btn {
+            background-color: var(--secondary-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .request-demo-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            background: linear-gradient(to right, var(--background-dark), var(--primary-blue));
+            color: var(--text-light);
+            text-align: center;
+            padding: 8rem 0 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-red);
+            color: var(--text-light);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--text-light);
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .feature-grid-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-grid-2col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 992px) {
+            .feature-grid-3col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .feature-grid-2col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid-3col, .feature-grid-2col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .copyright-text {
+            color: var(--accent-yellow);
+        }
+
+        .platform-showcase {
+            background-color: white;
+            padding: 4rem 0;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-container {
+            width: 80%;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .platform-features {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .platform-feature-card {
+            min-width: 100%;
+            flex: 0 0 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .platform-feature-image {
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        .platform-feature-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .platform-feature-card:hover .platform-feature-image img {
+            transform: scale(1.25);
+        }
+
+        .platform-feature-content {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 15px;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .carousel-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            border: none;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .carousel-btn.active {
+            opacity: 1;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav class="nav">
+                    <div class="logo-container">
+                        <img src="OrchardLearnX.png" alt="OrchardLearnX Logo" class="app-logo">
+                    </div>
+                    <div class="nav-links">
+                        <a href="#features">Features</a>
+                        <a href="#platform">Platform</a>
+                        <a href="#printing">Printing</a>
+                        <a href="#benefits">Benefits</a>
+                        <a href="#use-cases">Use Cases</a>
+                        <a href="mailto:itemorchardllc@gmail.com?subject=OrchardLearnX%20Demo%20Request&body=Hello%20Item%20Orchard%20Team%2C%0A%0AI%20am%20interested%20in%20requesting%20a%20demo%20of%20OrchardLearnX.%0A%0ACould%20you%20please%20provide%20more%20information%20about%20scheduling%20a%20demonstration%3F%0A%0AThank%20you%2C%0A%5BYour%20Name%5D" class="btn btn-primary">Request a Demo</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span style="color: var(--secondary-red);">Orchard</span><span style="color: var(--primary-blue);">LearnX</span>
+                    </h1>
+                    <h2 style="color: var(--accent-yellow); margin-bottom: 2rem;">Content Analysis & Customization Platform</h2>
+                    <p class="hero-description">
+                        OrchardLearnX enables you to offer custom item banks, form builders, and visualizations—all driven by a robust, flexible JSON framework. Your clients access a branded, simplified assessment interface without needing to use complex third-party platforms.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="OrchardLearnX_Brochure.pdf" download class="btn btn-primary">Download Brochure</a>
+                        <a href="mailto:itemorchardllc@gmail.com?subject=OrchardLearnX%20Consultation%20Request&body=Hello%20Item%20Orchard%20Team%2C%0A%0AI%20am%20interested%20in%20scheduling%20a%20consultation%20about%20OrchardLearnX.%0A%0ACould%20you%20please%20provide%20more%20information%20about%20available%20consultation%20times%3F%0A%0AThank%20you%2C%0A%5BYour%20Name%5D" class="btn btn-secondary">Schedule Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Key Features</h2>
+            <div class="feature-grid-3col">
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Advanced Filtering</h3>
+                    <p>Filter items by standards, DOK, question type, language, and more—all in one unified interface.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Real-Time Visualization</h3>
+                    <p>See your item bank as an interactive knowledge graph to explore relationships and structure.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Form Generation</h3>
+                    <p>Dynamically build item authoring forms based on user selections and templates.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Custom JSON Integration</h3>
+                    <p>Edit advanced JSON structure directly, with smart validation and template-aware rendering.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Seamless Export</h3>
+                    <p>Download curated content sets in standard JSON, CSV, or integrate with Power BI.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Usage Analytics</h3>
+                    <p>Track usage trends, most reused items, and standards alignment gaps in real time.</p>
+                </div>
+            </div>
+        </section>
+        <div style="page-break-before: always;"></div>
+
+        <section id="platform" class="platform-showcase">
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Platform</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-dark);">Experience the power of our advanced knowledge graph visualization and analysis tools.</p>
+                </div>
+                <div class="carousel-wrapper">
+                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-container">
+                        <div class="platform-features">
+                            <div class="platform-feature-card">
+                                <div class="platform-feature-image">
+                                    <img src="content_explorer.png" alt="Content Explorer">
+                                </div>
+                                <div class="platform-feature-content">
+                                    <h3>Content Explorer</h3>
+                                    <p>Browse and filter your content library with powerful search tools.</p>
+                                </div>
+                            </div>
+                            <div class="platform-feature-card">
+                                <div class="platform-feature-image">
+                                    <img src="print_preview.png" alt="Print Preview">
+                                </div>
+                                <div class="platform-feature-content">
+                                    <h3>Print Preview</h3>
+                                    <p>See how your digital assessments will appear in print format before exporting.</p>
+                                </div>
+                            </div>
+                            <div class="platform-feature-card">
+                                <div class="platform-feature-image">
+                                    <img src="knowledge_graph.png" alt="Knowledge Graph">
+                                </div>
+                                <div class="platform-feature-content">
+                                    <h3>Knowledge Graph</h3>
+                                    <p>Visualize relationships between standards, items, and learning progressions.</p>
+                                </div>
+                            </div>
+                            <div class="platform-feature-card">
+                                <div class="platform-feature-image">
+                                    <img src="interactive_dashboard.png" alt="Dashboard View">
+                                </div>
+                                <div class="platform-feature-content">
+                                    <h3>Interactive Dashboard</h3>
+                                    <p>Comprehensive analytics dashboard with real-time insights.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    
+                    <div class="carousel-buttons">
+                        <button class="carousel-btn active" data-index="0"></button>
+                        <button class="carousel-btn" data-index="1"></button>
+                        <button class="carousel-btn" data-index="2"></button>
+                        <button class="carousel-btn" data-index="3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="printing" class="features">
+            <h2>Advanced Printing Capabilities</h2>
+            <div class="feature-grid-3col">
+                <div class="feature-card">
+                    <i class="fas fa-print"></i>
+                    <h3>Print-Ready Assessments</h3>
+                    <p>Convert digital activities into professionally formatted printable documents with customizable layouts.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>PDF Generation</h3>
+                    <p>Export assessments as high-quality PDFs with proper pagination, headers, footers, and answer keys—a feature typically requiring third-party solutions.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-th"></i>
+                    <h3>Custom Layout Templates</h3>
+                    <p>Choose from multiple print layouts or create custom templates with your organization's branding and formatting preferences.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-key"></i>
+                    <h3>Automatic Answer Sheets</h3>
+                    <p>Generate separate student and teacher versions of assessments with answer keys, rubrics, and scoring guides.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>MathJax & Media Optimization</h3>
+                    <p>Advanced handling of mathematical notation and media elements for high-quality printed output.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-random"></i>
+                    <h3>Multiple Versions</h3>
+                    <p>Create multiple versions of the same assessment with randomized question order for secure testing environments.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="features">
+            <h2>Benefits</h2>
+            <div class="feature-grid-2col">
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Intelligent Authoring</h3>
+                    <p>Accelerate assessment creation with form-driven inputs and schema validation.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-check"></i>
+                    <h3>User Customization</h3>
+                    <p>Adapt the interface and content for different user roles, needs, and export targets.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Data-Driven Decisions</h3>
+                    <p>Use visual analytics to inform curriculum development priorities and identify content gaps and opportunities.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-align-center"></i>
+                    <h3>Standards Alignment</h3>
+                    <p>Easily track how your materials align across different state standards and demonstrate comprehensive coverage.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="use-cases" class="features">
+            <h2>Use Cases</h2>
+            <div class="feature-grid-2col">
+                <div class="feature-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Assessment Creation</h3>
+                    <p>Build comprehensive, standards-aligned assessments with gap analysis, content mapping, and cross-state alignment.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Content Management</h3>
+                    <p>Organize, categorize, and maintain your content library with powerful filtering and tagging tools.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Generate detailed reports on content usage, standards coverage, and user engagement patterns.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-print"></i>
+                    <h3>Hybrid Assessment Delivery</h3>
+                    <p>Support both digital and print-based assessment strategies with seamless conversion between formats.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p><span class="copyright-text">&copy; 2025 OrchardLearnX by Item Orchard LLC. All rights reserved.</span></p>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const carousel = document.querySelector('.platform-features');
+                const cards = document.querySelectorAll('.platform-feature-card');
+                const buttons = document.querySelectorAll('.carousel-btn');
+                const prevBtn = document.querySelector('.prev-btn');
+                const nextBtn = document.querySelector('.next-btn');
+                let currentIndex = 0;
+                
+                // Set initial position
+                updateCarousel();
+                
+                // Event listeners for carousel buttons
+                buttons.forEach((button, index) => {
+                    button.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateCarousel();
+                    });
+                });
+                
+                // Next and previous buttons
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
+                    updateCarousel();
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+                    updateCarousel();
+                });
+                
+                // Auto rotate carousel
+                let interval = setInterval(() => {
+                    currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+                    updateCarousel();
+                }, 5000);
+                
+                // Pause on hover
+                carousel.addEventListener('mouseenter', () => {
+                    clearInterval(interval);
+                });
+                
+                carousel.addEventListener('mouseleave', () => {
+                    interval = setInterval(() => {
+                        currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+                        updateCarousel();
+                    }, 5000);
+                });
+                
+                function updateCarousel() {
+                    const cardWidth = cards[0].offsetWidth;
+                    carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+                    
+                    // Update active button
+                    buttons.forEach((btn, idx) => {
+                        btn.classList.toggle('active', idx === currentIndex);
+                    });
+                }
+            });
+        </script>
+        <script>
+            // Add this script to handle navigation links
+            document.querySelectorAll('.nav-links a:not([href="#use-cases"]):not([href^="mailto:"])').forEach(anchor => {
+              anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { // Check if target exists before scrolling
+                  const headerHeight = document.querySelector('header').offsetHeight;
+                  
+                  window.scrollTo({
+                    top: target.offsetTop - headerHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              });
+            });
+          </script>
+    </body>
+</html>

@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact Us | Item Orchard LLC</title>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Lynn Coupal - Founder">
+	<meta name="description" content="Contact Item Orchard LLC for AI-powered educational technology solutions. Reach out for a demo of our knowledge graph and curriculum mapping tools.">
+
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/Item_Orchard_favicon.ico">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Rubik:wght@400;500;700&family=Spartan:wght@400;700;900&display=swap" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- Additional CSS for background fixes -->
+    <style>
+	
+		/* Change check icons to teal color */
+		.fas.fa-check.text-primary {
+		color: #17a2b8 !important;
+		}
+
+
+		/* Add hover effects */
+		.icon-lg.bg-primary:hover,
+		.timeline-icon.bg-primary:hover {
+		transform: scale(1.05);
+		transition: all 0.3s ease;
+		box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+		}
+		/* Change the rounded bg-primary circles to teal */
+		.icon-lg.bg-primary {
+		background-color: #17a2b8 !important;
+		}
+		/* If you have any other icons using text-primary that you want to change */
+		.fas.text-primary, 
+		.far.text-primary, 
+		.fab.text-primary {
+		color: #17a2b8 !important;
+		}
+
+		/* Timeline container styling */
+		.timeline {
+		position: relative;
+		padding: 0;
+		}
+
+		/* Vertical timeline line */
+		.timeline:before {
+		content: '';
+		position: absolute;
+		left: 20px;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: #e9ecef;
+		z-index: 0;
+		}
+
+		/* Timeline item styling */
+		.timeline-item {
+		position: relative;
+		z-index: 1;
+		}
+
+		/* Timeline icon styling - changed to teal */
+		.timeline-icon {
+		background-color: #17a2b8 !important; /* Teal color instead of primary */
+		width: 40px;
+		height: 40px;
+		min-width: 40px;
+		font-weight: 600;
+		font-size: 18px;
+		box-shadow: 0 3px 6px rgba(23, 162, 184, 0.3); /* Subtle shadow */
+		z-index: 2;
+		}
+
+		/* Timeline content styling */
+		.timeline-content {
+		padding: 0.5rem 0;
+		}
+
+		/* Hover effect for timeline items */
+		.timeline-item:hover .timeline-icon {
+		transform: scale(1.1);
+		transition: all 0.3s ease;
+		}
+
+		/* Make the timeline responsive */
+		@media (max-width: 767.98px) {
+		.timeline:before {
+			left: 15px;
+		}
+		
+		.timeline-icon {
+			width: 30px;
+			height: 30px;
+			min-width: 30px;
+			font-size: 14px;
+		}
+		
+		.timeline-content {
+			padding-left: 0;
+		}
+		}		
+		
+		
+		.step-item:hover h2 {
+		-webkit-text-stroke: 1px #17A2B8;
+		text-shadow: none;
+		color: #17A2B8 !important;
+		transition: all 0.3s ease;
+		}
+
+		.step-item:hover h4,
+		.step-item:hover p {
+		color: #17A2B8 !important;
+		transition: color 0.3s ease;
+		}
+
+
+		.bg-primary-custom {
+			background-color: #17a2b8 !important;
+		}
+		.text-primary-custom {
+			color: #17a2b8 !important;
+		}
+		.btn-primary-custom {
+			background-color: #17a2b8 !important;
+			border-color: #17a2b8 !important;
+			color: #333333 !important; /* Charcoal gray text */
+		}
+		.btn-primary-custom:hover {
+		color: #333333 !important;
+		}
+		.text-white-stroke-thick {
+		color: transparent;
+		-webkit-text-stroke: 2px white; /* Thicker outline */
+		text-shadow: 0 0 25px rgba(23, 162, 184, 0.4); /* Optional glow for depth */
+		}
+
+		.fa-check-circle {
+		color: #17a2b8 !important;
+		}
+
+		.fill-primary-custom {
+			fill: #17a2b8 !important;
+		}
+		.svg-custom-border-dark {
+			fill: #17a2b8;
+		}
+		.text-white-stroke {
+		-webkit-text-stroke: 1px #17a2b8;
+		color: white;
+		text-shadow: 0 0 20px rgba(0,0,0,0.3);
+		}
+
+		.text-primary-shadow {
+			text-shadow: 0 0 40px #17a2b8;
+		}
+		.footer-top-line {
+			background-color: #17a2b8 !important;
+		}
+		.text-white-stroke {
+			-webkit-text-stroke: 1px 1c3c6e;
+			color: white  !important;
+			text-shadow: 0 0 10px rgba(0,0,0,0.3); /* Optional: adds a subtle shadow */
+		}
+        
+        /* Contact page specific styles */
+        .contact-info-item {
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #17a2b8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon i {
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+        
+        .form-control:focus {
+            border-color: #17a2b8;
+            box-shadow: 0 0 0 0.25rem rgba(23, 162, 184, 0.25);
+        }
+        
+        .form-check-input:checked {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+	</style>
+
+</head>
+
+<body>
+<!-- Pre loader -->
+<div class="preloader">
+	<img class="preloader-item" src="assets/images/loader/02.gif" alt="Loading">
+</div>
+
+<!-- Offcanvas end START -->
+<div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasEnd" aria-labelledby="offcanvasEnd" style="background-image:url(assets/images/bg/pattern/03.png); background-position: center left; background-size: cover;">
+	<div class="offcanvas-header">
+	  <a class="ms-auto btn btn-primary btn-round zoom-hover" data-bs-dismiss="offcanvas" aria-label="Close">
+			<i class="fas fa-times p-0"></i>
+		</a>
+  </div>
+	<div class="offcanvas-body vh-lg-100 d-flex align-items-start flex-column px-5 px-md-6">
+		<!-- Offcanvas inner START -->
+		<ul class="nav dropdown-toggle-start-icon d-block flex-column mb-5">
+			<li class="nav-item display-6 h5 position-relative">
+				<a href="index.html" class="nav-link text-white-stroke d-block">Home</a>
+			</li>
+			
+			<li class="nav-item display-6 h5">
+				<a class="nav-link text-white-stroke" href="about.html">About</a>
+			</li>
+
+			<li class="nav-item display-6 h5">
+				<a class="nav-link text-white-stroke" href="services.html">Services</a>
+			</li>
+
+			<li class="nav-item display-6 h5">
+				<a class="nav-link text-white-stroke dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+				<ul class="dropdown-menu dropdown-menu-dark">
+					<li><a class="dropdown-item" href="products/orchardgraphx.html">OrchardGraphX</a></li>
+					<li><a class="dropdown-item" href="products/orchardlearnx.html">OrchardLearnX</a></li>
+					<li><a class="dropdown-item" href="products/integrated-solution.html">Integrated Solution</a></li>
+				</ul>
+			</li>
+			
+			<li class="nav-item display-6 h5">
+				<a class="nav-link text-white-stroke" href="contact.html">Contact Us</a>
+			</li>
+		</ul>
+		<div class="mt-auto mb-5">
+			<a href="mailto:itemorchardllc@gmail.com" class="font-heading text-white text-primary-hover d-block mb-3">itemorchardllc@gmail.com</a>
+		</div>
+		<!-- Offcanvas inner END -->
+	</div>
+</div>
+<!-- Offcanvas end END -->
+
+<!-- Search START -->
+<div class="search-full collapse bg-dark p-3 pb-lg-0" id="search-open">
+	<div class="container position-relative">
+		<h2 class="position-absolute start-0 bottom-0 mb-n5 display-1 text-white-stroke opacity-1">
+			<span class="d-block">Search</span>
+		</h2>
+		<div class="row vh-100">
+			<div class="d-flex flex-column my-auto py-5 w-100">
+				<!-- Search form START -->
+				<form class="form-dark form-line position-relative w-100">
+					<div class="mb-3 input-group-lg input-text-white-stroke mb-0">
+						<!-- Search input -->
+						<input class="form-control font-heading caret-primary mb-0 pe-6" type="text" name="search" placeholder="What are you looking for?">
+						<span class="focus-border"></span>
+					</div>
+					<!-- Search button -->
+					<button type="button" class="position-absolute end-0 top-0 btn pb-3 text-primary-hover h-100">
+						<i class="bi bi-search display-8"></i>
+					</button>
+				</form>
+				<!-- Search form END -->
+				<p class="small mt-2 mb-0">e.g. OrchardGraphX, Knowledge Graphs, Standards Mapping</p>
+			</div>
+
+			<!-- Search button close START -->
+			<a class="position-fixed top-0 end-0 m-3 m-md-5 btn btn-white btn-round zoom-hover" data-bs-toggle="collapse" href="javascript:void(0)" data-bs-target="#search-open" aria-expanded="true">
+				<i class="fas fa-times p-0"></i>
+			</a>
+			<!-- Search button close END -->
+		</div>
+	</div>
+</div>
+<!-- Search END -->
+
+<!-- Header START -->
+<header class="navbar-transparent navbar-sticky-bg-dark navbar-sticky">
+
+	<!-- Navbar top START -->
+	<div class="navbar-top d-none d-lg-block">
+		<div class="container">
+			<div class="d-md-flex justify-content-between align-items-center">
+				<!-- Navbar top Left-->
+				<div class="d-flex align-items-center justify-content-center">
+					<!-- Top info -->
+					<ul class="nav justify-content-center justify-content-md-start">
+						<li class="nav-item">
+							<a class="navbar-link text-white text-primary-hover" href="#" data-toggle="contact-modal">
+								<i class="fas fa-headset me-2"></i>Book a call
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Navbar top Right-->
+				<div class="d-flex align-items-center justify-content-center">
+					<!-- Language -->
+					<div class="dropdown ms-3">
+					  <a class="dropdown-toggle text-white text-primary-hover" href="#" role="button" id="dropdownLanguage" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="fa-fw me-2" src="assets/images/flags/us.svg" alt=""> English </a>
+					  <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownLanguage">
+					  	<span class="dropdown-item-text">Select language</span>
+					  	<div class="dropdown-divider"></div>
+					    <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/fr.svg" alt=""> Français</a>
+					  </div>
+					</div>
+
+					<!-- Top link -->
+					<ul class="nav ms-3">
+						<li class="nav-item">
+							<a href="contact.html" class="nav-link text-white text-primary-hover">Contact</a>
+						</li>
+					</ul>
+
+					<!-- Top social -->
+					<ul class="list-unstyled d-flex">
+						<li> <a class="text-white text-primary-hover px-2" href="#"><i class="fab fa-facebook-f"></i></a> </li>
+						<li> <a class="text-white text-primary-hover px-2" href="#"><i class="fab fa-instagram"></i></a> </li>
+						<li> <a class="text-white text-primary-hover px-2" href="#"><i class="fab fa-linkedin-in"></i></a> </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="divider-light opacity-1"></div>
+	<!-- Navbar top END -->
+
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-dark navbar-expand-lg">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="index.html">
+				<img src="assets/images/Item Orchard Logo_new.png" alt="Item Orchard LLC Logo" width="250">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"> </span>
+			</button>
+  
+			<!-- Main Menu START -->
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll ms-0">
+					<!-- Menu item 1 About -->
+					<li class="nav-item">
+					  <a class="nav-link" href="about.html">About Us</a>
+					</li>
+					
+					<!-- Menu item 2 Services -->
+					<li class="nav-item">
+					  <a class="nav-link" href="services.html">Services</a>
+					</li>
+				
+					<!-- Menu item 3 Products -->
+					<li class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Products
+					  </a>
+					  <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+						<li><a class="dropdown-item" href="products/orchardgraphx.html">OrchardGraphX</a></li>
+						<li><a class="dropdown-item" href="products/orchardlearnx.html">OrchardLearnX</a></li>
+						<li><a class="dropdown-item" href="products/integrated-solution.html">Integrated Solution</a></li>
+					  </ul>
+					</li>
+					
+					<!-- Menu item 4 Contact-->
+					<li class="nav-item">
+					  <a class="nav-link active" href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<!-- Main Menu END -->
+  
+			<!-- Nav right START -->
+			<div class="nav flex-nowrap align-items-center">
+				<!-- Nav Search Opener-->
+				<div class="nav-item">
+					<a class="nav-link ms-2" data-bs-toggle="collapse" href="javascript:void(0)" data-bs-target="#search-open">
+						<i class="bi bi-search display-9 "> </i>
+					</a>
+				</div>
+
+				<!-- Nav side Opener -->
+				<div class="nav-item">
+					<a class="nav-link pe-0" data-bs-toggle="offcanvas" href="#offcanvasEnd" role="button" aria-controls="offcanvasEnd">
+						<i class="bi bi-text-right rtl-flip display-8" data-bs-target="#offcanvasEnd"></i>
+						<span class="ms-2">Menu</span>
+					</a>
+				</div>
+			</div>
+			<!-- Nav right END -->
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- MAIN CONTENT START -->
+<main>
+
+<!-- Inner intro START -->
+<section class="bg-parallax bg-dark-overlay-4 pt-8 pt-md-10 pb-6 pb-md-8" style="background:url(assets/images/bg/02.jpg) no-repeat center center; background-size:cover;">
+	<div class="container">
+	  <div class="row d-flex justify-content-lg-between">
+		<!-- Inner intro title -->
+		<div class="col-md-7 col-xl-5">
+		  <h1 class="text-white display-6 mb-3">Contact Us</h1>
+		  <p class="animate__animated animate__fadeInUp animate__delay-3s lead text-white">
+			We'd love to hear from you. Let's start a conversation about transforming your educational content.
+		  </p>
+		</div>
+		<!-- Inner intro right -->
+		<div class="col-md-4 mt-5 mt-md-auto">
+		</div>
+	  </div> <!-- Row END -->
+	</div>
+</section>
+<!-- Inner intro END -->
+
+<!-- Contact Info START -->
+<section class="pt-6 pb-0">
+	<div class="container">
+		<div class="row g-4">
+			<!-- Email -->
+			<div class="col-md-4">
+				<div class="card bg-light border-0 contact-info-item text-center">
+					<div class="contact-icon mx-auto">
+						<i class="fas fa-envelope"></i>
+					</div>
+					<h5 class="mb-3">Email</h5>
+					<p class="mb-0">
+						<a href="mailto:itemorchardllc@gmail.com" class="text-body">itemorchardllc@gmail.com</a>
+					</p>
+					<p class="small text-muted mt-2">We typically respond within 24 hours</p>
+				</div>
+			</div>
+			
+			<!-- Schedule a demo -->
+			<div class="col-md-4">
+				<div class="card bg-light border-0 contact-info-item text-center">
+					<div class="contact-icon mx-auto">
+						<i class="fas fa-calendar-alt"></i>
+					</div>
+					<h5 class="mb-3">Schedule a Demo</h5>
+					<p class="mb-3">See our platforms in action</p>
+					<a href="#" class="btn btn-sm btn-primary-custom" data-toggle="contact-modal">Book a Call</a>
+				</div>
+			</div>
+			
+			<!-- Connect -->
+			<div class="col-md-4">
+				<div class="card bg-light border-0 contact-info-item text-center">
+					<div class="contact-icon mx-auto">
+						<i class="fas fa-share-alt"></i>
+					</div>
+					<h5 class="mb-3">Connect With Us</h5>
+					<ul class="list-inline mb-0">
+						<li class="list-inline-item">
+							<a href="#" class="btn btn-sm btn-light"><i class="fab fa-linkedin-in"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a href="#" class="btn btn-sm btn-light"><i class="fab fa-twitter"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-f"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Contact Info END -->
+
+<!-- Contact Form START -->
+<section class="py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9 mx-auto">
+				<div class="card shadow-lg border-0">
+					<div class="card-body p-4 p-md-5">
+						<div class="text-center mb-4">
+							<h2>Get in Touch</h2>
+							<p class="lead">Tell us about your project or inquiry</p>
+						</div>
+						
+						<!-- Form START -->
+						<form class="row g-3" id="contact-form" method="POST" action="send_email.php">
+							<!-- Name -->
+							<div class="col-md-6">
+								<label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="name" name="name" required>
+							</div>
+							
+							<!-- Email -->
+							<div class="col-md-6">
+								<label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+								<input type="email" class="form-control" id="email" name="email" required>
+							</div>
+							
+							<!-- Organization -->
+							<div class="col-md-6">
+								<label for="organization" class="form-label">Organization <span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="organization" name="organization" required>
+							</div>
+							
+							<!-- Role -->
+							<div class="col-md-6">
+								<label for="role" class="form-label">Your Role <span class="text-danger">*</span></label>
+								<select class="form-select" id="role" name="role" required>
+									<option value="" selected>Select your role</option>
+									<option value="Teacher">Teacher</option>
+									<option value="Principal">Principal</option>
+									<option value="Curriculum Director">Curriculum Director</option>
+									<option value="IT Administrator">IT Administrator</option>
+									<option value="Superintendent">Superintendent</option>
+									<option value="Other">Other</option>
+								</select>
+							</div>
+							
+							<!-- Subject -->
+							<div class="col-12">
+								<label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="subject" name="subject" required>
+							</div>
+							
+							<!-- Message -->
+							<div class="col-12">
+								<label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+								<textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+							</div>
+							
+							<!-- Interests -->
+							<div class="col-12 mt-4">
+								<label class="form-label">I'm interested in learning more about: (Select all that apply)</label>
+								<div class="form-check mt-2">
+									<input class="form-check-input" type="checkbox" value="OrchardGraphX" id="interest-graphx" name="interests[]">
+									<label class="form-check-label" for="interest-graphx">
+										OrchardGraphX - Knowledge Graph Platform
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="OrchardLearnX" id="interest-learnx" name="interests[]">
+									<label class="form-check-label" for="interest-learnx">
+										OrchardLearnX - Assessment & Content Platform
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Integrated Solution" id="interest-integrated" name="interests[]">
+									<label class="form-check-label" for="interest-integrated">
+										Integrated Solution
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Custom Development" id="interest-custom" name="interests[]">
+									<label class="form-check-label" for="interest-custom">
+										Custom Development Services
+									</label>
+								</div>
+							</div>
+							
+							<!-- Submit Button -->
+							<div class="col-12 text-center mt-4">
+								<button type="submit" class="btn btn-primary-custom btn-lg">Send Message</button>
+							</div>
+						</form>
+						<!-- Form END -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Contact Form END -->
+
+<!-- FAQ START -->
+<section class="bg-light py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 mx-auto text-center mb-5">
+				<h2 class="display-6">Frequently Asked Questions</h2>
+				<p class="lead">Common questions about our platforms and services</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<div class="accordion" id="faqAccordion">
+					<!-- FAQ Item 1 -->
+					<div class="accordion-item border-0 shadow-sm mb-3">
+						<h2 class="accordion-header" id="headingOne">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								What makes Item Orchard's knowledge graph technology unique?
+							</button>
+						</h2>
+						<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Our knowledge graph technology is specifically designed for educational content, making complex relationships between standards, curriculum, and assessments visible and actionable. Unlike generic graph databases, our solutions incorporate education-specific ontologies and visualization tools that help educators identify gaps, redundancies, and progression paths in their curriculum and content.
+							</div>
+						</div>
+					</div>
+					
+					<!-- FAQ Item 2 -->
+					<div class="accordion-item border-0 shadow-sm mb-3">
+						<h2 class="accordion-header" id="headingTwo">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								How does OrchardGraphX help with standards alignment?
+							</button>
+						</h2>
+						<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								OrchardGraphX provides dynamic visualizations of standards relationships, showing how standards connect across grades, subjects, and different standards frameworks. This helps curriculum developers and educators align content precisely, create crosswalks between different standards sets, and ensure comprehensive coverage of required learning objectives.
+							</div>
+						</div>
+					</div>
+					
+					<!-- FAQ Item 3 -->
+					<div class="accordion-item border-0 shadow-sm mb-3">
+						<h2 class="accordion-header" id="headingThree">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Can Item Orchard's platforms integrate with our existing systems?
+							</button>
+						</h2>
+						<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Yes, our platforms are designed with integration in mind. We offer APIs and data export/import capabilities that allow seamless connection with learning management systems, assessment platforms, and curriculum management tools. Our team can work with you to ensure smooth integration with your existing educational technology ecosystem.
+							</div>
+						</div>
+					</div>
+					
+					<!-- FAQ Item 4 -->
+					<div class="accordion-item border-0 shadow-sm mb-3">
+						<h2 class="accordion-header" id="headingFour">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								What kind of support and training do you provide?
+							</button>
+						</h2>
+						<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								We provide comprehensive onboarding and ongoing support for all our platforms. This includes initial setup assistance, personalized training sessions, detailed documentation, and responsive technical support. We also offer optional professional development workshops for educators focused on using our tools effectively for curriculum design and instructional planning.
+							</div>
+						</div>
+					</div>
+					
+					<!-- FAQ Item 5 -->
+					<div class="accordion-item border-0 shadow-sm">
+						<h2 class="accordion-header" id="headingFive">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+								How long does implementation typically take?
+							</button>
+						</h2>
+						<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Implementation timelines vary based on the complexity of your needs and the scale of deployment. Basic setups can be completed in 2-4 weeks, while more complex implementations with custom integrations may take 8-12 weeks. Our team works closely with you to create a realistic timeline and ensures clear communication throughout the process.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- FAQ END -->
+
+<!-- CTA START -->
+<section class="py-5 bg-dark text-white">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-8 text-center text-md-start">
+				<h2 class="mb-md-0">Ready to transform your educational content strategy?</h2>
+			</div>
+			<div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+				<a href="#" class="btn btn-primary-custom btn-lg" data-toggle="contact-modal">Schedule a Demo</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- CTA END -->
+
+</main>
+<!-- MAIN CONTENT END -->
+
+<!-- Footer line separator -->
+<div id="footer-top-line" class="container-fluid p-0">
+  <div class="row g-0">
+    <div class="col-12">
+      <div style="height: 8px; background-color: #17a2b8 !important;" class="footer-top-line"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer START -->
+<footer class="bg-dark footer-sticky pt-6">
+	<div class="container">
+		<div class="row">
+			<!-- Footer Widget 1 -->
+			<div class="col-md-6 col-lg-3 mb-5">
+				<h3 class="text-white" style="font-family: 'Bebas Neue', sans-serif; text-decoration: underline;">Item Orchard<span style="color: #17a2b8;">.</span></h3>
+				<p>Education Technology Innovation</p>
+				<div class="d-flex me-auto">
+					<h6 class="mt-2 me-4 text-white">Follow on:</h6>
+					<div class="list-group-inline list-unstyled text-primary-hover">
+						<a href="#" class="list-group-item text-white bg-transparent">LinkedIn</a>
+						<a href="#" class="list-group-item text-white bg-transparent">Twitter</a>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Footer Widget 2 -->
+			<div class="col-md-6 col-lg-3 mb-5">
+				<h5 class="mb-4 text-white">Contact Us</h5>
+				<p>Email: <a href="mailto:itemorchardllc@gmail.com" class="text-body">itemorchardllc@gmail.com</a></p>
+			</div>
+	
+			<!-- Footer Widget 3 -->
+			<div class="col-md-6 col-lg-3 mb-5">
+				<h5 class="mb-4 text-white">Useful links</h5>
+				<div class="row">
+					<div class="col-6">
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link pt-0" href="products/orchardgraphx.html">OrchardGraphX</a></li>
+							<li class="nav-item"><a class="nav-link" href="products/orchardlearnx.html">OrchardLearnX</a></li>
+						</ul>
+					</div>
+					<div class="col-6">
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link pt-0" href="about.html">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer Widget 4 -->
+			<div class="col-md-6 col-lg-3 mb-5">
+				<h5 class="mb-4 text-white">Download Resources</h5>
+				<ul class="nav flex-column text-primary-hover">
+					<li class="nav-item">
+						<a class="nav-link pt-0" href="brochures/OrchardGraphX_Brochure.pdf" download>
+							<i class="fas fa-file-pdf me-2"></i>OrchardGraphX Brochure
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="brochures/OrchardLearnX_Brochure.pdf" download>
+							<i class="fas fa-file-pdf me-2"></i>OrchardLearnX Brochure
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="brochures/Integrated_Brochure.pdf" download>
+							<i class="fas fa-file-pdf me-2"></i>Integrated Solution Brochure
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		<!-- Divider -->
+		<div class="divider-light opacity-1"></div>
+	
+		<!-- Footer copyright START -->
+		<div class="row align-items-center justify-content-md-between py-4">
+			<div class="col-md-6">
+				<div class="text-center text-md-start">©2025 <a href="#">Item Orchard LLC</a>. All rights reserved</div>
+			</div>
+			
+		</div>
+		<!-- Footer copyright END -->
+	</div>
+</footer>
+<!-- Footer END -->
+
+<!-- Contact Modal Popup -->
+<div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content bg-dark text-white">
+			<div class="modal-header border-0">
+				<h5 class="modal-title" id="contactFormModalLabel">Schedule a Demo</h5>
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<!-- Left side with agenda -->
+					<div class="col-md-5 border-end border-secondary">
+						<div class="mb-4">
+							<strong class="fs-4">Item Orchard Demo</strong>
+							<h6 class="mt-4">What you'll see:</h6>
+							<ul>
+								<li>Interactive knowledge graphs</li>
+								<li>Standards mapping tools</li>
+								<li>Curriculum alignment capabilities</li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- Right side with form -->
+					<div class="col-md-7">
+						<!-- Form START -->
+						<form class="contact-form form-dark form-line mt-4" id="popup-contact-form" name="popupcontactform" method="POST" action="send_email.php">
+							<div class="row">
+								<div class="col-md-12">
+									<!-- name -->
+									<div class="mb-3 position-relative">
+										<input required id="popup-name" name="name" type="text" class="form-control" placeholder="Your Name *" style="width: 100%; margin-left: 0; padding-left: 0;">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<!-- Organization Name -->
+									<div class="mb-3 position-relative">
+										<input required id="popup-organization" name="organization" type="text" class="form-control" placeholder="School/District/Organization *" style="width: 100%; margin-left: 0; padding-left: 0;">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<!-- Role -->
+									<div class="mb-3 position-relative">
+										<select required id="popup-role" name="role" class="form-select form-control" style="width: 100%; margin-left: 0; padding-left: 0; border-radius: 0;" aria-label="Role">
+											<option value="" selected style="color: var(--bs-gray-500);">Your Role *</option>
+											<option value="Teacher" style="color: #000000;">&nbsp;&nbsp;&nbsp;Teacher</option>
+											<option value="Principal" style="color: #000000;">&nbsp;&nbsp;&nbsp;Principal</option>
+											<option value="Curriculum Director" style="color: #000000;">&nbsp;&nbsp;&nbsp;Curriculum Director</option>
+											<option value="IT Administrator" style="color: #000000;">&nbsp;&nbsp;&nbsp;IT Administrator</option>
+											<option value="Superintendent" style="color: #000000;">&nbsp;&nbsp;&nbsp;Superintendent</option>
+											<option value="Other" style="color: #000000;">&nbsp;&nbsp;&nbsp;Other</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<!-- Email -->
+									<div class="mb-3 position-relative">
+										<input required id="popup-email" name="email" type="email" class="form-control" placeholder="Email *" style="width: 100%; margin-left: 0; padding-left: 0;">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<!-- Message -->
+									<div class="mb-3 position-relative">
+										<textarea id="popup-message" name="message" cols="40" rows="4" class="form-control" placeholder="Any specific questions or areas of interest?"></textarea>
+									</div>
+								</div>
+								<!-- submit button -->
+								<div class="col-md-12 text-start">
+									<button class="btn btn-primary-custom rounded-pill" style="width: 200px;" type="submit">Request Demo</button>
+								</div>
+							</div>
+						</form>
+						<!-- Form END -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Google Maps Integration -->
+<section class="pt-0">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-12">
+                <div class="bg-light p-4 text-center">
+                    <h4>We work with educational organizations across North America</h4>
+                </div>
+                <div class="ratio ratio-21x9" style="height: 400px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12087060.894584282!2d-108.27642862649373!3d39.365461110212425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sus!4v1682618770262!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom cursor -->
+<div class="cursor-dot-outline"></div>
+<div class="cursor-dot"></div>
+
+<!-- Back to top -->
+<div class="back-top">
+	<div class="scroll-line"></div>
+	<span class="scoll-text">Go Up</span>
+</div>
+
+<!-- JS libraries, plugins and custom scripts -->
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Vendors -->
+<script src="assets/vendor/glightbox/js/glightbox.js"></script>
+<script src="assets/vendor/jarallax/jarallax.min.js"></script>
+<script src="assets/vendor/tiny-slider/tiny-slider.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<!-- Template Functions -->
+<script src="assets/js/functions.js"></script>
+
+<script>
+	// Function to trigger the modal from any element with data-toggle="contact-modal" attribute
+	document.addEventListener('DOMContentLoaded', function() {
+		const triggers = document.querySelectorAll('[data-toggle="contact-modal"]');
+		triggers.forEach(trigger => {
+			trigger.addEventListener('click', function(e) {
+				e.preventDefault();
+				const contactModal = new bootstrap.Modal(document.getElementById('contactFormModal'));
+				contactModal.show();
+			});
+		});
+	});
+</script>
+</body>
+</html>

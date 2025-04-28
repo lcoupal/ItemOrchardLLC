@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OrchardGraphX | Curriculum Intelligence Platform</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <style>
+        :root {
+            --primary-blue: #1c3c6e;
+            --secondary-purple: #d269e6;
+            --background-light: #f4f4f8;
+            --text-dark: #333;
+            --text-light: #fff;
+            --accent-color: #db7ced;
+        }
+        .copyright-text {
+            color: #d269e9;
+        }
+
+        @media print {
+    .page-break {
+        page-break-after: always;
+        break-after: page;
+    }
+}
+
+@media print {
+  /* Fix header positioning */
+  header {
+    position: relative !important;
+    top: 0 !important;
+  }
+  
+  /* Ensure page breaks occur at logical section boundaries */
+  section {
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+  
+  /* First section should not have a page break */
+  section:first-of-type {
+    page-break-before: avoid;
+  }
+  
+  /* Make carousels display all content */
+  .carousel-wrapper {
+    overflow: visible !important;
+  }
+  
+  .platform-features {
+    transform: none !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .platform-feature-card {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+        .centered-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .centered-cta {
+            display: flex;
+            justify-content: center;
+        }
+
+        section[id] {
+            scroll-margin-top: 135px;
+        }
+        .app-logo {
+            height: 75px;
+            object-fit: contain;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', 'Frutiger', sans-serif;
+            font-weight: bold;
+        }
+
+        .section-title p {
+            max-width: 800px;
+            margin: 0 auto 0 0;
+            color: var(--text-dark);
+            opacity: 0.8;
+            text-align: left;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+        }
+
+        .header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', 'Frutiger', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-purple);
+        }
+        
+        .request-demo-btn {
+            background-color: var(--secondary-purple);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', 'Frutiger', sans-serif;
+        }
+        
+        .request-demo-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+            color: var(--text-light);
+            text-align: center;
+            padding: 8rem 0 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', 'Frutiger', sans-serif;
+            font-weight: bold;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', 'Frutiger', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-purple);
+            color: var(--text-light);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            margin-bottom: 0.75rem;
+            color: var(--primary-blue);
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', 'Frutiger', sans-serif;
+            font-weight: bold;
+        }
+
+        .feature-card p {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+        }
+
+        .platform-showcase {
+            background-color: white;
+            padding: 4rem 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 95%; /* Reduce from 100% to add some margin */
+            max-width: 1100px; /* Slightly reduced from 1200px */
+            margin: 0 auto;
+            padding: 30px 0;
+            overflow: hidden; /* Change from visible to hidden */
+            border-radius: 10px; /* Optional: adds rounded corners to the container */
+        }
+
+        .platform-features {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+            padding: 20px 0;
+            margin: 0 auto; /* Ensure it's centered */
+        }
+
+        .platform-feature-card {
+            background: var(--background-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: calc(50% - 30px); /* Two cards per row */
+            flex: 0 0 calc(50% - 30px);
+            margin: 0 15px;
+            transform: scale(0.98);
+            transition: transform 0.3s ease;
+        }
+        
+        .platform-feature-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .platform-feature-image {
+            height: 350px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .platform-feature-card:hover .platform-feature-image img {
+            transform: scale(1.25); /* Slight zoom on image */
+        }
+        .platform-feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .platform-feature-content {
+            padding: 1.5rem;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .platform-feature-card:hover .platform-feature-content {
+            transform: translateY(-10px); /* Slight lift effect */
+        }
+        #platform-additional.platform-showcase {
+            background-color: #f0f0f0;
+        }
+
+        .carousel-buttons {
+            text-align: center;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .carousel-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .carousel-btn.active {
+            opacity: 1;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+            color: var(--text-light);
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .workflow {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .workflow-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .workflow-steps {
+            counter-reset: step;
+        }
+
+        .workflow-step {
+            margin-bottom: 1.5rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .workflow-step:before {
+            content: counter(step);
+            counter-increment: step;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        @media (max-width: 992px) {
+            .carousel-container {
+                width: 95%; /* Slightly wider on smaller screens */
+                overflow: hidden; /* Keep hidden on all screen sizes */
+            }
+            
+            .platform-feature-card {
+            background: var(--background-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: calc(50% - 30px);
+            flex: 0 0 calc(50% - 30px);
+            margin: 0 15px;
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                width: 85%; /* Even narrower on mobile for better margins */
+            }
+            
+            .platform-feature-card {
+                width: calc(100% - 20px);
+                flex: 0 0 calc(100% - 20px);
+            }
+        }
+        </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="app-logo">
+                    <img src="OrchardGraphX.png" alt="OrchardGraphX Logo" class="app-logo">
+                </div>
+                <div class="nav-links">
+                    <a href="#why-orchardgraphx">Why OrchardGraphX?</a>
+                    <a href="#tech-stack">Technology</a>
+                    <a href="#benefits">Benefits</a>
+                    <a href="#use-cases">Use Cases</a>
+                    <a href="#platform">Platform</a>
+                    <a href="#platform-additional">Innovations</a>
+                    <a href="mailto:itemorchardllc@gmail.com?subject=OrchardGraphX%20Demo%20Request&body=Hello%20OrchardGraphX%20Team%2C%0A%0AI%20am%20interested%20in%20requesting%20a%20demo%20of%20OrchardGraphX.%0A%0ACould%20you%20please%20provide%20more%20information%20about%20scheduling%20a%20demonstration%3F%0A%0AThank%20you%2C%0A%5BYour%20Name%5D" class="btn btn-primary">Request a Demo</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transform Curriculum Standards Into Interactive Knowledge</h1>
+                <p class="hero-description">Visualize relationships between standards, content, and learning progressions with unprecedented clarity. Drive curriculum decisions with data-backed insights.</p>
+                <div class="hero-cta" style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; width: 100%;">
+                    <a href="OrchardGraphX_Brochure.pdf" download class="btn btn-primary">Download Brochure</a>
+                    <a href="mailto:itemorchardllc@gmail.com?subject=OrchardGraphX%20Consultation%20Request&body=Hello%20Item%20Orchard%20Team%2C%0A%0AI%20am%20interested%20in%20scheduling%20a%20consultation%20about%20OrchardGraphX.%0A%0ACould%20you%20please%20provide%20more%20information%20about%20available%20consultation%20times%3F%0A%0AThank%20you%2C%0A%5BYour%20Name%5D" class="btn btn-secondary">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <section id="why-orchardgraphx" class="container">
+        <div class="section-title">
+            <h2>Why OrchardGraphX?</h2>
+            <p>Not all curriculum tools are created equal. OrchardGraphX offers unmatched clarity, precision, and flexibility.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-project-diagram feature-icon"></i>
+                <h3 class="feature-title">Graph-Driven Intelligence</h3>
+                <p>Unlike static spreadsheets, our knowledge graph reveals how standards, lessons, and progressions interact in real-time.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-brain feature-icon"></i>
+                <h3 class="feature-title">AI-Powered Insights</h3>
+                <p>Uncover hidden connections and optimize curriculum alignment with advanced analytics.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-globe feature-icon"></i>
+                <h3 class="feature-title">Multi-State Standards Mapping</h3>
+                <p>Seamlessly align and compare standards across different educational frameworks.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line feature-icon"></i>
+                <h3 class="feature-title">Advanced Reporting</h3>
+                <p>Generate comprehensive insights to drive curriculum development strategies.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-lock-open feature-icon"></i>
+                <h3 class="feature-title">No Vendor <nobr>Lock-In</nobr></h3>
+                <p>Use OrchardGraphX alongside your existing tools. Export to Power BI, CSV, or JSON—your data stays yours.</p>
+            </div>
+        </div>
+    </section>
+   
+    <section id="tech-stack" class="container">
+        <div class="section-title">
+            <h2>Built for Scalability & Flexibility</h2>
+            <p>OrchardGraphX is developed using modern web technologies designed to support thousands of standards and assets with high responsiveness.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-network-wired feature-icon"></i>
+                <h3 class="feature-title">Semantic Graph Architecture</h3>
+                <p>Leverages RDF/JSON-LD for linked data representations, enabling powerful querying and flexibility.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-code feature-icon"></i>
+                <h3 class="feature-title">SPARQL & JSONata Compatibility</h3>
+                <p>Analyze and filter curriculum content using advanced, yet intuitive, querying languages.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-laptop-code feature-icon"></i>
+                <h3 class="feature-title">Embedded Query Engine</h3>
+                <p>Run queries and generate visualizations directly within your browser—no need for a backend connection.</p>
+            </div>
+        </div>
+    </section>
+   
+    <section id="benefits" class="container">
+        <div class="section-title">
+            <h2>Benefits for Educational Publishers</h2>
+            <p>OrchardGraphX delivers tangible value for curriculum development, standards alignment, and <nobr>content optimization.</nobr></p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-chart-pie feature-icon"></i>
+                <h3 class="feature-title">Data-Driven Curriculum Design</h3>
+                <p>Use visual analytics to inform curriculum development priorities. Identify content gaps and opportunities based on standards coverage and learning progressions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-align-center feature-icon"></i>
+                <h3 class="feature-title">Comprehensive Standards Alignment</h3>
+                <p>Easily track how your materials align across different state standards. Demonstrate comprehensive standards coverage to educational decision-makers.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-edit feature-icon"></i>
+                <h3 class="feature-title">Optimized Content Development</h3>
+                <p>Prioritize content creation based on identified gaps. Ensure your curriculum provides complete coverage of required standards.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line feature-icon"></i>
+                <h3 class="feature-title">Enhanced Sales Support</h3>
+                <p>Equip your sales team with powerful visual tools to demonstrate standards alignment and comprehensive coverage to districts and schools.</p>
+            </div>
+        </div>
+    </section>
+   
+    <section id="use-cases" class="container">
+        <div class="section-title">
+            <h2>Use Cases for Educational Publishers</h2>
+            <p>See how OrchardGraphX addresses specific challenges in curriculum development and standards alignment.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-pencil-ruler feature-icon"></i>
+                <h3 class="feature-title">Curriculum Planning <nobr>and Development</nobr></h3>
+                <p>OrchardGraphX provides the insights needed to develop comprehensive, standards-aligned curriculum:</p>
+                <ul>
+                    <li><strong>Gap Analysis:</strong> Identify areas where your current content doesn't adequately address specific standards or skills.</li>
+                    <li><strong>Content Mapping:</strong> Visualize how different content assets connect to standards and to each other in a learning progression.</li>
+                    <li><strong>Cross-State Alignment:</strong> Ensure materials work effectively across multiple state standards systems for national distribution.</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-file-contract feature-icon"></i>
+                <h3 class="feature-title">Adoption Bid Support</h3>
+                <p>Strengthen your position in competitive adoption processes:</p>
+                <ul>
+                    <li><strong>Standards Coverage Demonstration:</strong> Visually demonstrate comprehensive coverage of required standards for state adoptions.</li>
+                    <li><strong>Content Differentiation:</strong> Highlight the unique strengths and connections in your curriculum compared to competitors.</li>
+                    <li><strong>Customization Planning:</strong> Quickly identify areas that require customization for specific state requirements.</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-chart-line feature-icon"></i>
+                <h3 class="feature-title">Product Enhancement Strategy</h3>
+                <p>Use OrchardGraphX to guide ongoing product improvement:</p>
+                <ul>
+                    <li><strong>Content Prioritization:</strong> Identify which content assets will deliver the greatest value in addressing standards gaps.</li>
+                    <li><strong>Learning Progression Optimization:</strong> Refine the sequence of content to better support effective learning progressions.</li>
+                    <li><strong>Rapid Response to Standards Changes:</strong> Quickly analyze the impact of standards revisions on your existing content and plan updates accordingly.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+   
+    <section id="platform" class="platform-showcase">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transformative Platform Capabilities</h2>
+                <p>Experience the power of our advanced knowledge graph visualization and analysis tools.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="platform-features">
+                    <div class="platform-feature-card">
+                        <div class="platform-feature-image">
+                            <img src="Advanced Data Exploration.png" alt="Data Exploration">
+                        </div>
+                        <div class="platform-feature-content">
+                            <h3>Advanced Data Exploration</h3>
+                            <p>Dive deep into curriculum data with comprehensive exploration tools.</p>
+                        </div>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="platform-feature-image">
+                            <img src="Admin Console.png" alt="User Management">
+                        </div>
+                        <div class="platform-feature-content">
+                            <h3>Comprehensive User Management</h3>
+                            <p>Control access and manage users with our intuitive admin console.</p>
+                        </div>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="platform-feature-image">
+                            <img src="Power BI Integration.png" alt="Integration Tools">
+                        </div>
+                        <div class="platform-feature-content">
+                            <h3>Integration Tools</h3>
+                            <p>Seamlessly connect with your existing educational technology ecosystem.</p>
+                        </div>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="platform-feature-image">
+                            <img src="Curated Crosswalks.png" alt="Curated Math Crosswalk Knowledge Graphs">
+                        </div>
+                        <div class="platform-feature-content">
+                            <h3>Intelligent Standards Mapping</h3>
+                            <p>Seamlessly navigate and align standards across different educational frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-buttons">
+                <button class="carousel-btn active" data-index="0"></button>
+                <button class="carousel-btn" data-index="1"></button>
+                <button class="carousel-btn" data-index="2"></button>
+                <button class="carousel-btn" data-index="3"></button>
+            </div>
+        </div>
+    </section>
+   
+    <section id="platform-additional" class="platform-showcase">
+        <div class="container">
+            <div class="section-title">
+                <h2>Innovations</h2>
+                <p>Our platform continuously adapts to meet the dynamic needs of educational publishers, providing innovative tools that transform curriculum development.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="platform-features">
+                    <div class="platform-feature-card">
+                        <div class="platform-feature-image">
+                            <img src="Customized Learning Content Dashboard.png" alt="Content Analytics">
+                        </div>
+                        <div class="platform-feature-content">
+                            <h3>Content Analytics</h3>
+                            <p>Analyze your curriculum content for depth, breadth, and alignment with standards.</p>
+                        </div>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="platform-feature-image">
+                            <img src="Customized Student Analytics Dashboard.png" alt="Customized Reports">
+                        </div>
+                        <div class="platform-feature-content">
+                            <h3>Customized Reports</h3>
+                            <p>Generate detailed reports tailored to your specific educational requirements.</p>
+                        </div>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="platform-feature-image">
+                            <img src="Assign from Datatable.png" alt="Assignment and Download">
+                        </div>
+                        <div class="platform-feature-content">
+                            <h3>Direct Assignment and Download</h3>
+                            <p>Assign educational assets from within the graph or download the linked asset.</p>
+                        </div>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="platform-feature-image">
+                            <img src="Flexible Viewing Options.png" alt="Flexible Viewing Options">
+                        </div>
+                        <div class="platform-feature-content">
+                            <h3>Flexible Viewing Options</h3>
+                            <p>Toggle between:&nbsp;</p>
+
+                            <ul style="margin-left: 40px;">
+                                <li>graph and card views</li>
+                                <li>light and dark modes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="platform-feature-image">
+                            <img src="Curriculum Scope & Sequence.png" alt="Scope & Sequence View">
+                        </div>
+                        <div class="platform-feature-content">
+                            <h3>Curriculum Views</h3>
+                            <p>Toggle between network graph view and scope & sequence view.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-buttons">
+                <button class="carousel-btn active" data-index="0"></button>
+                <button class="carousel-btn" data-index="1"></button>
+                <button class="carousel-btn" data-index="2"></button>
+                <button class="carousel-btn" data-index="3"></button>
+                <button class="carousel-btn" data-index="4"></button>
+            </div>
+        </div>
+    </section>
+   
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Curriculum Strategy?</h2>
+            <p>Discover how OrchardGraphX can revolutionize your educational content development.</p>
+            <span class="copyright-text">&copy; 2025 OrchardGraphX by Item Orchard LLC. All rights reserved.</span>
+        </div>
+    </section>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const carouselContainers = document.querySelectorAll('.carousel-container');
+    
+    carouselContainers.forEach(function(carouselContainer) {
+        const carousel = carouselContainer.querySelector('.platform-features');
+        const originalCards = Array.from(carouselContainer.querySelectorAll('.platform-feature-card'));
+        const buttonsContainer = carouselContainer.parentElement.querySelector('.carousel-buttons');
+        const buttons = buttonsContainer.querySelectorAll('.carousel-btn');
+        const cardCount = originalCards.length;
+
+        carousel.style.padding = '0';
+
+        function setupContinuousCarousel() {
+            carousel.innerHTML = '';
+
+            const cardSet = [...originalCards, ...originalCards, ...originalCards];
+            
+            cardSet.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.style.margin = '0 15px'; // Adjust margin
+                clone.style.display = 'inline-block';
+                carousel.appendChild(clone);
+            });
+        }
+
+        function setupCarouselLayout() {
+            carousel.style.display = 'flex';
+            carousel.style.width = '100%';
+            carousel.style.transition = 'transform 0.5s ease-in-out';
+            
+            const cards = carousel.querySelectorAll('.platform-feature-card');
+            cards.forEach(card => {
+                // Adjust for two cards per view
+                card.style.flex = '0 0 calc(50% - 30px)';
+                card.style.width = 'calc(50% - 30px)';
+                card.style.margin = '0 15px';
+                card.style.boxSizing = 'border-box';
+            });
+        }
+
+        setupContinuousCarousel();
+        setupCarouselLayout();
+
+        let currentTranslate = 0;
+        let currentIndex = 0;
+
+        function moveCarousel() {
+            const card = carousel.querySelector('.platform-feature-card');
+            // Calculate width including margins
+            const cardWidth = card.offsetWidth + 30; // 15px margin on each side
+
+            currentTranslate -= cardWidth;
+
+            carousel.style.transform = `translateX(${currentTranslate}px)`;
+
+            currentIndex = (currentIndex + 1) % cardCount;
+
+            buttons.forEach((btn, i) => {
+                btn.classList.toggle('active', i === currentIndex);
+            });
+
+            if (currentIndex === 0) {
+                setTimeout(() => {
+                    carousel.style.transition = 'none';
+                    currentTranslate = 0;
+                    carousel.style.transform = 'translateX(0)';
+                    
+                    void carousel.offsetWidth;
+                    
+                    carousel.style.transition = 'transform 0.5s ease-in-out';
+                }, 500);
+            }
+        }
+
+        let autoSlideInterval = setInterval(moveCarousel, 5000);
+
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                clearInterval(autoSlideInterval);
+
+                while (currentIndex !== index) {
+                    moveCarousel();
+                }
+
+                autoSlideInterval = setInterval(moveCarousel, 5000);
+            });
+        });
+
+        window.addEventListener('resize', function() {
+            setupCarouselLayout();
+        });
+    });
+});
+    </script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+        function downloadPDF() {
+            const doc = new jsPDF('p', 'pt', 'a4');
+            doc.html(document.body, {
+                callback: function (pdf) {
+                    pdf.save("OrchardGraphX_Brochure.pdf");
+                },
+                x: 10,
+                y: 10
+            });
+        }
+        </script>
+        
+</body>
+</html>

@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>About Us | Item Orchard LLC</title>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Lynn Coupal - Founder">
+	<meta name="description" content="Item Orchard LLC | AI-powered educational technology solutions. Explore knowledge graphs, curriculum mapping, item banks, and instructional design tools.">
+
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/Item_Orchard_favicon.ico">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Rubik:wght@400;500;700&family=Spartan:wght@400;700;900&display=swap" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- Additional CSS for background fixes -->
+    <style>
+	
+		/* Change check icons to teal color */
+		.fas.fa-check.text-primary {
+		color: #17a2b8 !important;
+		}
+
+
+		/* Add hover effects */
+		.icon-lg.bg-primary:hover,
+		.timeline-icon.bg-primary:hover {
+		transform: scale(1.05);
+		transition: all 0.3s ease;
+		box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+		}
+		/* Change the rounded bg-primary circles to teal */
+		.icon-lg.bg-primary {
+		background-color: #17a2b8 !important;
+		}
+		/* If you have any other icons using text-primary that you want to change */
+		.fas.text-primary, 
+		.far.text-primary, 
+		.fab.text-primary {
+		color: #17a2b8 !important;
+		}
+
+		/* Timeline container styling */
+		.timeline {
+		position: relative;
+		padding: 0;
+		}
+
+		/* Vertical timeline line */
+		.timeline:before {
+		content: '';
+		position: absolute;
+		left: 20px;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: #e9ecef;
+		z-index: 0;
+		}
+
+		/* Timeline item styling */
+		.timeline-item {
+		position: relative;
+		z-index: 1;
+		}
+
+		/* Timeline icon styling - changed to teal */
+		.timeline-icon {
+		background-color: #17a2b8 !important; /* Teal color instead of primary */
+		width: 40px;
+		height: 40px;
+		min-width: 40px;
+		font-weight: 600;
+		font-size: 18px;
+		box-shadow: 0 3px 6px rgba(23, 162, 184, 0.3); /* Subtle shadow */
+		z-index: 2;
+		}
+
+		/* Timeline content styling */
+		.timeline-content {
+		padding: 0.5rem 0;
+		}
+
+		/* Hover effect for timeline items */
+		.timeline-item:hover .timeline-icon {
+		transform: scale(1.1);
+		transition: all 0.3s ease;
+		}
+
+		/* Make the timeline responsive */
+		@media (max-width: 767.98px) {
+		.timeline:before {
+			left: 15px;
+		}
+		
+		.timeline-icon {
+			width: 30px;
+			height: 30px;
+			min-width: 30px;
+			font-size: 14px;
+		}
+		
+		.timeline-content {
+			padding-left: 0;
+		}
+		}		
+		
+		
+		.step-item:hover h2 {
+		-webkit-text-stroke: 1px #17A2B8;
+		text-shadow: none;
+		color: #17A2B8 !important;
+		transition: all 0.3s ease;
+		}
+
+		.step-item:hover h4,
+		.step-item:hover p {
+		color: #17A2B8 !important;
+		transition: color 0.3s ease;
+		}
+
+
+		.bg-primary-custom {
+			background-color: #17a2b8 !important;
+		}
+		.text-primary-custom {
+			color: #17a2b8 !important;
+		}
+		.btn-primary-custom {
+			background-color: #17a2b8 !important;
+			border-color: #17a2b8 !important;
+			color: #333333 !important; /* Charcoal gray text */
+		}
+		.btn-primary-custom:hover {
+		color: #333333 !important;
+		}
+		.text-white-stroke-thick {
+		color: transparent;
+		-webkit-text-stroke: 2px white; /* Thicker outline */
+		text-shadow: 0 0 25px rgba(23, 162, 184, 0.4); /* Optional glow for depth */
+		}
+
+		.fa-check-circle {
+		color: #17a2b8 !important;
+		}
+
+		.fill-primary-custom {
+			fill: #17a2b8 !important;
+		}
+		.svg-custom-border-dark {
+			fill: #17a2b8;
+		}
+		.text-white-stroke {
+		-webkit-text-stroke: 1px #17a2b8;
+		color: white;
+		text-shadow: 0 0 20px rgba(0,0,0,0.3);
+		}
+
+		.text-primary-shadow {
+			text-shadow: 0 0 40px #17a2b8;
+		}
+		.footer-top-line {
+			background-color: #17a2b8 !important;
+		}
+		.text-white-stroke {
+			-webkit-text-stroke: 1px 1c3c6e;
+			color: white  !important;
+			text-shadow: 0 0 10px rgba(0,0,0,0.3); /* Optional: adds a subtle shadow */
+		}
+	</style>
+
+</head>
+
+<body>
+<!-- Pre loader -->
+<div class="preloader">
+	<img class="preloader-item" src="assets/images/loader/02.gif" alt="Loading">
+</div>
+
+<!-- Offcanvas end START -->
+<div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasEnd" aria-labelledby="offcanvasEnd" style="background-image:url(assets/images/bg/pattern/03.png); background-position: center left; background-size: cover;">
+	<div class="offcanvas-header">
+	  <a class="ms-auto btn btn-primary btn-round zoom-hover" data-bs-dismiss="offcanvas" aria-label="Close">
+			<i class="fas fa-times p-0"></i>
+		</a>
+  </div>
+	<div class="offcanvas-body vh-lg-100 d-flex align-items-start flex-column px-5 px-md-6">
+		<!-- Offcanvas inner START -->
+		<ul class="nav dropdown-toggle-start-icon d-block flex-column mb-5">
+			<li class="nav-item display-6 h5 position-relative">
+				<a href="index.html" class="nav-link text-white-stroke d-block">Home</a>
+			</li>
+			
+			<li class="nav-item display-6 h5">
+				<a class="nav-link text-white-stroke" href="about.html">About</a>
+			</li>
+
+			<li class="nav-item display-6 h5">
+				<a class="nav-link text-white-stroke" href="services.html">Services</a>
+			</li>
+
+			<li class="nav-item display-6 h5">
+				<a class="nav-link text-white-stroke dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+				<ul class="dropdown-menu dropdown-menu-dark">
+					<li><a class="dropdown-item" href="products/orchardgraphx.html">OrchardGraphX</a></li>
+					<li><a class="dropdown-item" href="products/orchardlearnx.html">OrchardLearnX</a></li>
+					<li><a class="dropdown-item" href="products/integrated-solution.html">Integrated Solution</a></li>
+				</ul>
+			</li>
+			
+			<li class="nav-item display-6 h5">
+				<a class="nav-link text-white-stroke" href="contact.html">Contact Us</a>
+			</li>
+		</ul>
+		<div class="mt-auto mb-5">
+			<a href="mailto:itemorchardllc@gmail.com" class="font-heading text-white text-primary-hover d-block mb-3">itemorchardllc@gmail.com</a>
+		</div>
+		<!-- Offcanvas inner END -->
+	</div>
+</div>
+<!-- Offcanvas end END -->
+
+<!-- Search START -->
+<div class="search-full collapse bg-dark p-3 pb-lg-0" id="search-open">
+	<div class="container position-relative">
+		<h2 class="position-absolute start-0 bottom-0 mb-n5 display-1 text-white-stroke opacity-1">
+			<span class="d-block">Search</span>
+		</h2>
+		<div class="row vh-100">
+			<div class="d-flex flex-column my-auto py-5 w-100">
+				<!-- Search form START -->
+				<form class="form-dark form-line position-relative w-100">
+					<div class="mb-3 input-group-lg input-text-white-stroke mb-0">
+						<!-- Search input -->
+						<input class="form-control font-heading caret-primary mb-0 pe-6" type="text" name="search" placeholder="What are you looking for?">
+						<span class="focus-border"></span>
+					</div>
+					<!-- Search button -->
+					<button type="button" class="position-absolute end-0 top-0 btn pb-3 text-primary-hover h-100">
+						<i class="bi bi-search display-8"></i>
+					</button>
+				</form>
+				<!-- Search form END -->
+				<p class="small mt-2 mb-0">e.g. OrchardGraphX, Knowledge Graphs, Standards Mapping</p>
+			</div>
+
+			<!-- Search button close START -->
+			<a class="position-fixed top-0 end-0 m-3 m-md-5 btn btn-white btn-round zoom-hover" data-bs-toggle="collapse" href="javascript:void(0)" data-bs-target="#search-open" aria-expanded="true">
+				<i class="fas fa-times p-0"></i>
+			</a>
+			<!-- Search button close END -->
+		</div>
+	</div>
+</div>
+<!-- Search END -->
+
+<!-- Header START -->
+<header class="navbar-transparent navbar-sticky-bg-dark navbar-sticky">
+
+	<!-- Navbar top START -->
+	<div class="navbar-top d-none d-lg-block">
+		<div class="container">
+			<div class="d-md-flex justify-content-between align-items-center">
+				<!-- Navbar top Left-->
+				<div class="d-flex align-items-center justify-content-center">
+					<!-- Top info -->
+					<ul class="nav justify-content-center justify-content-md-start">
+						<li class="nav-item">
+							<a class="navbar-link text-white text-primary-hover" href="#" data-toggle="contact-modal">
+								<i class="fas fa-headset me-2"></i>Book a call
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Navbar top Right-->
+				<div class="d-flex align-items-center justify-content-center">
+					<!-- Language -->
+					<div class="dropdown ms-3">
+					  <a class="dropdown-toggle text-white text-primary-hover" href="#" role="button" id="dropdownLanguage" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="fa-fw me-2" src="assets/images/flags/us.svg" alt=""> English </a>
+					  <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownLanguage">
+					  	<span class="dropdown-item-text">Select language</span>
+					  	<div class="dropdown-divider"></div>
+					    <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/fr.svg" alt=""> Français</a>
+					  </div>
+					</div>
+
+					<!-- Top link -->
+					<ul class="nav ms-3">
+						<li class="nav-item">
+							<a href="contact.html" class="nav-link text-white text-primary-hover">Contact</a>
+						</li>
+					</ul>
+
+					<!-- Top social -->
+					<ul class="list-unstyled d-flex">
+						<li> <a class="text-white text-primary-hover px-2" href="#"><i class="fab fa-facebook-f"></i></a> </li>
+						<li> <a class="text-white text-primary-hover px-2" href="#"><i class="fab fa-instagram"></i></a> </li>
+						<li> <a class="text-white text-primary-hover px-2" href="#"><i class="fab fa-linkedin-in"></i></a> </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="divider-light opacity-1"></div>
+	<!-- Navbar top END -->
+
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-dark navbar-expand-lg">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="index.html">
+				<img src="assets/images/Item Orchard Logo_new.png" alt="Item Orchard LLC Logo" width="250">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"> </span>
+			</button>
+  
+			<!-- Main Menu START -->
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll ms-0">
+					<!-- Menu item 1 About -->
+					<li class="nav-item">
+					  <a class="nav-link active" href="about.html">About Us</a>
+					</li>
+					
+					<!-- Menu item 2 Services -->
+					<li class="nav-item">
+					  <a class="nav-link" href="services.html">Services</a>
+					</li>
+				
+					<!-- Menu item 3 Products -->
+					<li class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Products
+					  </a>
+					  <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+						<li><a class="dropdown-item" href="products/orchardgraphx.html">OrchardGraphX</a></li>
+						<li><a class="dropdown-item" href="products/orchardlearnx.html">OrchardLearnX</a></li>
+						<li><a class="dropdown-item" href="products/integrated-solution.html">Integrated Solution</a></li>
+					  </ul>
+					</li>
+					
+					<!-- Menu item 4 Contact-->
+					<li class="nav-item">
+					  <a class="nav-link" href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<!-- Main Menu END -->
+  
+			<!-- Nav right START -->
+			<div class="nav flex-nowrap align-items-center">
+				<!-- Nav Search Opener-->
+				<div class="nav-item">
+					<a class="nav-link ms-2" data-bs-toggle="collapse" href="javascript:void(0)" data-bs-target="#search-open">
+						<i class="bi bi-search display-9 "> </i>
+					</a>
+				</div>
+
+				<!-- Nav side Opener -->
+				<div class="nav-item">
+					<a class="nav-link pe-0" data-bs-toggle="offcanvas" href="#offcanvasEnd" role="button" aria-controls="offcanvasEnd">
+						<i class="bi bi-text-right rtl-flip display-8" data-bs-target="#offcanvasEnd"></i>
+						<span class="ms-2">Menu</span>
+					</a>
+				</div>
+			</div>
+			<!-- Nav right END -->
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- MAIN CONTENT START -->
+<main>
+
+<!-- Inner intro START -->
+<section class="bg-parallax bg-dark-overlay-4 pt-8 pt-md-10 pb-6 pb-md-8" style="background:url(assets/images/bg/02.jpg) no-repeat center center; background-size:cover;">
+	<div class="container">
+	  <div class="row d-flex justify-content-lg-between">
+		<!-- Inner intro title -->
+		<div class="col-md-12 col-xl-12">
+		  <h1 class="text-white display-6 mb-3">About <span style="white-space: nowrap;">Item Orchard LLC</span></h1>
+		  <p class="animate__animated animate__fadeInUp animate__delay-3s lead text-white">
+			Mapping Knowledge. Empowering Learning.
+		  </p>
+		  <a href="contact.html" class="btn btn-primary btn-line">Get Started</a>
+		</div>
+		<!-- Inner intro right -->
+		<div class="col-md-4 mt-5 mt-md-auto">
+		</div>
+	  </div> <!-- Row END -->
+	</div>
+</section>
+<!-- Inner intro END -->
+
+<!-- About START -->
+<section>
+	<div class="container">
+		<div class="row d-flex justify-content-lg-between align-items-center">
+
+			<!-- About left -->
+			<div class="col-lg-5 col-xl-4">
+				<!-- Since text -->
+				<div class="mb-n6 ms-3 position-relative z-index-9">
+					<h5>Innovating Education since</h5>
+					<h3 class="display-4 text-dark-stroke">2019</h3><br><br><br><br>
+				</div>
+				<!-- Image -->
+				<div class="reveal-item bg-light rounded" data-aos="reveal-item">
+					<div class="reveal-animation reveal-end reveal-primary aos" data-aos="reveal-end"></div>
+					
+				</div>
+				<!-- Label -->
+				<span class="font-alt fw-normal display-8 bg-primary text-white float-end d-inline-block mt-n5 me-lg-n5 px-3 rotate-10">Knowledge Graphs, SaaS Solutions & AI-Powered Innovation 📚🚀</span>
+			</div>
+
+			<!-- About Right -->
+			<div class="col-lg-7 col-xl-8 mt-5 mt-lg-0 mt-xl-5">
+				<!-- Title -->
+				<span class="font-alt fw-normal display-8 d-block mb-3">We map the future of education</span>
+				
+				<h3 class="mb-5">A Full-Service Educational Technology Company Specializing in: Knowledge Graphs, Assessment Platforms & Content Intelligence</h3>
+
+				<!-- Features -->
+				<div class="row row-cols-1 row-cols-md-3 g-4">
+
+					<!-- OrchardGraphX -->
+					<div class="col">
+						<div class="feature-card text-center">
+							<div class="icon-wrapper mb-3">
+								<img src="assets/images/OrchardGraphX_logo.png" alt="OrchardGraphX Logo" class="img-fluid" style="max-height: 80px;">
+							</div>
+							<h5>OrchardGraphX</h5>
+							<p class="small">Curriculum Intelligence Platform—visualizing standards, content, and learning pathways with dynamic knowledge graphs.</p>
+						</div>
+					</div>
+				
+					<!-- OrchardLearnX -->
+					<div class="col">
+						<div class="feature-card text-center">
+							<div class="icon-wrapper mb-3">
+								<img src="assets/images/OrchardLearnX_logo.png" alt="OrchardLearnX Logo" class="img-fluid" style="max-height: 80px;">
+							</div>
+							<h5>OrchardLearnX</h5>
+							<p class="small">Content Analysis & Customization Platform—custom item banks, form builders, and real-time content visualizations.</p>
+						</div>
+					</div>
+				
+					<!-- Integrated Solution -->
+					<div class="col">
+						<div class="feature-card text-center">
+							<div class="icon-wrapper mb-3 d-flex justify-content-center align-items-center gap-3">
+								<img src="assets/images/OrchardGraphX_logo.png" alt="OrchardGraphX Logo" class="img-fluid" style="max-height: 60px;">
+								<span style="font-size: 2rem; color: #17a2b8;">+</span>
+								<img src="assets/images/OrchardLearnX_logo.png" alt="OrchardLearnX Logo" class="img-fluid" style="max-height: 60px;">
+							</div>
+							<h5>Integrated Solution</h5>
+							<p class="small">Unified platform bringing together knowledge graphs, standards crosswalking, item banks, and robust reporting.</p>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Company Mission -->
+				<div class="mt-5">
+					<h4 class="mb-3">Our Mission</h4>
+					<p>At Item Orchard LLC, we're committed to transforming educational content and curriculum development through innovative technology. We believe that by making complex educational relationships visible and actionable, we can help educators deliver more personalized, effective instruction at scale.</p>
+					
+					<p>Our platforms leverage the power of knowledge graphs, artificial intelligence, and data visualization to illuminate connections between educational standards, content, and learning progressions—empowering educators to make data-driven decisions that improve student outcomes.</p>
+				</div>
+
+				<!-- Progress bar -->
+				<div class="overflow-hidden mt-5">
+					<p class="mb-1 text-dark">Projects delivered on time</p>
+					<div class="progress progress-lg progress-percent-bg">
+						<div class="progress-bar progress-bar-striped progress-bar-animated bg-primary aos" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width:98%">
+							<span class="progress-percent">98%</span>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- End About Right -->
+
+		</div> <!-- End Row -->
+	</div> <!-- End Container -->
+</section>
+<!-- About END -->
+
+<!-- Values Section START -->
+<section class="bg-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center mb-5">
+				<h2 class="display-5">Our Core Values</h2>
+				<p class="lead">The principles that guide our work and relationships</p>
+			</div>
+		</div>
+		
+		<div class="row g-4">
+			<!-- Value 1 -->
+			<div class="col-md-4">
+				<div class="card border-0 h-100 shadow-sm">
+					<div class="card-body text-center p-4">
+							<i class="fas fa-lightbulb"></i>
+						
+						<h4>Innovation</h4>
+						<p class="text-start">We constantly seek new ways to visualize and connect educational data, pushing the boundaries of what's possible in EdTech.</p>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Value 2 -->
+			<div class="col-md-4">
+				<div class="card border-0 h-100 shadow-sm">
+					<div class="card-body text-center p-4">
+						
+							<i class="fas fa-handshake"></i>
+						
+						<h4>Partnership</h4>
+						<p class="text-start">We work closely with educational organizations to understand their unique needs and customize solutions that drive real-world impact.</p>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Value 3 -->
+			<div class="col-md-4">
+				<div class="card border-0 h-100 shadow-sm">
+					<div class="card-body text-center p-4">
+						
+							<i class="fas fa-chart-line"></i>
+						
+						<h4>Data-Driven</h4>
+						<p class="text-start">We believe in the power of data to transform educational practice, making the invisible visible through powerful visualization tools.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Values Section END -->
+
+<!-- Team START -->
+<section class="pt-5">
+	<div class="container">
+	  <!-- Title -->
+	  <div class="row justify-content-center text-center">
+		<div class="col-lg-8 mb-3">
+		  <h2 class="display-6 mb-0 mb-sm-4 text-dark">Meet the Founder & CEO</h2>
+		</div>
+	  </div>
+	  <!-- Team -->
+	  <div class="row justify-content-center">
+		<div class="col-lg-8">
+		  <div class="tiny-slider dots-bordered mb-5">
+			<div class="tiny-slider-inner" data-autoplay="false" data-arrow="false" data-dots="true" data-items-xl="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">
+			  <!-- Card item START -->
+			  <div class="item">
+				<div class="card card-metro">
+				  <!-- Card Image -->
+				  <div class="card-image">
+					<img src="assets/images/Lynn1.png" alt="Lynn Coupal - Founder & CEO" class="img-fluid mx-auto d-block" style="max-height: 500px; object-fit: cover;">
+				  </div>
+				  <!-- Card Overlay -->
+				  <div class="card-img-overlay d-flex flex-column bg-dark-overlay-5">
+					<div class="mt-auto card-text text-center">
+					  <h5 class="text-white">Lynn Coupal</h5>
+					  <p class="small text-white mb-0">Founder & CEO</p>
+					</div>
+				  </div>						
+				</div>
+			  </div>
+			  <!-- Card item END -->
+			</div>
+		  </div>
+		</div>
+	  </div> <!-- Row END -->
+	  
+	  <div class="row">
+		<div class="col-lg-8 mx-auto">
+			<div class="bg-light p-4 p-lg-5 rounded">
+				<h4 class="mb-3">About the Founder</h4>
+				<p>Lynn Coupal founded Item Orchard LLC in 2019 with a vision to transform educational content through innovative technology. With over 15 years of experience in educational publishing, curriculum development, and assessment design, Lynn identified the need for more powerful tools to visualize and manage educational content relationships.</p>
+				
+				<p>Her work has focused on developing platforms that make standards alignment, content mapping, and learning progressions more visible and actionable for educational publishers, schools, and districts. Under her leadership, Item Orchard has grown to serve educational organizations across North America, helping them leverage the power of knowledge graphs and AI to improve curriculum design and content delivery.</p>
+				
+				<p>Lynn holds a nanodegree in Machine Learning, a Master's degree in Systems Engineering, and undergraduate degrees in Mathematics and Secondary Mathematics Education. She is passionate about the intersection of learning science, data visualization, and artificial intelligence in education.</p>
+			</div>
+		</div>
+	  </div>
+	</div>
+</section>
+<!-- Team END -->
+
+<!-- Our Approach START -->
+<section class="bg-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5 mb-5">
+				<h2 class="display-6">Our Approach</h2>
+				<p>We combine deep educational expertise with cutting-edge technology to create solutions that address real-world challenges in curriculum development and content management.</p>
+			</div>
+		</div>
+		
+		<div class="row g-4">
+			<!-- Approach Step 1 -->
+			<div class="col-md-4">
+				<div class="p-4 bg-white rounded shadow-sm h-100">
+					<h5 class="mb-3"><span style="color: #17a2b8;" class="me-2">01</span> Analyze</h5>
+					<p>We begin by deeply understanding your educational content ecosystem—standards, resources, assessments, and instructional materials.</p>
+					<ul class="list-unstyled mt-3">
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Standards Analysis</li>
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Content Auditing</li>
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Gap Identification</li>
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Needs Assessment</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- Approach Step 2 -->
+			<div class="col-md-4">
+				<div class="p-4 bg-white rounded shadow-sm h-100">
+					<h5 class="mb-3"><span style="color: #17a2b8;" class="me-2">02</span> Design</h5>
+					<p>We create custom knowledge graphs and visualization tools to make complex educational relationships clear and actionable.</p>
+					<ul class="list-unstyled mt-3">
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Knowledge Graph Architecture</li>
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> User Interface Design</li>
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Data Visualization</li>
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> System Integration</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- Approach Step 3 -->
+			<div class="col-md-4">
+				<div class="p-4 bg-white rounded shadow-sm h-100">
+					<h5 class="mb-3"><span style="color: #17a2b8;" class="me-2">03</span> Implement</h5>
+					<p>We provide comprehensive training and support to ensure seamless integration and adoption of our technology solutions.</p>
+					<ul class="list-unstyled mt-3">
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Platform Training</li>
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Data Migration</li>
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Technical Support</li>
+						<li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Ongoing Optimization</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Our Approach END -->
+
+<!-- CTA START -->
+<section class="py-5 bg-dark text-white">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-8 text-center text-md-start">
+				<h2 class="mb-md-0">Ready to transform your educational content strategy?</h2>
+			</div>
+			<div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+				<a href="contact.html" class="btn btn-primary-custom btn-lg">Contact Us Today</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- CTA END -->
+
+</main>
+<!-- MAIN CONTENT END -->
+
+<!-- Footer line separator -->
+<div id="footer-top-line" class="container-fluid p-0">
+  <div class="row g-0">
+    <div class="col-12">
+      <div style="height: 8px; background-color: #17a2b8 !important;" class="footer-top-line"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer START -->
+<footer class="bg-dark footer-sticky pt-6">
+	<div class="container">
+		<div class="row">
+			<!-- Footer Widget 1 -->
+			<div class="col-md-6 col-lg-3 mb-5">
+				<h3 class="text-white" style="font-family: 'Bebas Neue', sans-serif; text-decoration: underline;">Item Orchard<span style="color: #17a2b8;">.</span></h3>
+				<p>Education Technology Innovation</p>
+				<div class="d-flex me-auto">
+					<h6 class="mt-2 me-4 text-white">Follow on:</h6>
+					<div class="list-group-inline list-unstyled text-primary-hover">
+						<a href="#" class="list-group-item text-white bg-transparent">LinkedIn</a>
+						<a href="#" class="list-group-item text-white bg-transparent">Twitter</a>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Footer Widget 2 -->
+			<div class="col-md-6 col-lg-3 mb-5">
+				<h5 class="mb-4 text-white">Contact Us</h5>
+				<p>Email: <a href="mailto:itemorchardllc@gmail.com" class="text-body">itemorchardllc@gmail.com</a></p>
+			</div>
+	
+			<!-- Footer Widget 3 -->
+			<div class="col-md-6 col-lg-3 mb-5">
+				<h5 class="mb-4 text-white">Useful links</h5>
+				<div class="row">
+					<div class="col-6">
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link pt-0" href="products/orchardgraphx.html">OrchardGraphX</a></li>
+							<li class="nav-item"><a class="nav-link" href="products/orchardlearnx.html">OrchardLearnX</a></li>
+						</ul>
+					</div>
+					<div class="col-6">
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link pt-0" href="about.html">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer Widget 4 -->
+			<div class="col-md-6 col-lg-3 mb-5">
+				<h5 class="mb-4 text-white">Download Resources</h5>
+				<ul class="nav flex-column text-primary-hover">
+					<li class="nav-item">
+						<a class="nav-link pt-0" href="brochures/OrchardGraphX_Brochure.pdf" download>
+							<i class="fas fa-file-pdf me-2"></i>OrchardGraphX Brochure
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="brochures/OrchardLearnX_Brochure.pdf" download>
+							<i class="fas fa-file-pdf me-2"></i>OrchardLearnX Brochure
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="brochures/Integrated_Brochure.pdf" download>
+							<i class="fas fa-file-pdf me-2"></i>Integrated Solution Brochure
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		<!-- Divider -->
+		<div class="divider-light opacity-1"></div>
+	
+		<!-- Footer copyright START -->
+		<div class="row align-items-center justify-content-md-between py-4">
+			<div class="col-md-6">
+				<div class="text-center text-md-start">©2025 <a href="#">Item Orchard LLC</a>. All rights reserved</div>
+			</div>
+			
+		</div>
+		<!-- Footer copyright END -->
+	</div>
+</footer>
+<!-- Footer END -->
+
+<!-- Contact Modal Popup -->
+<div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content bg-dark text-white">
+			<div class="modal-header border-0">
+				<h5 class="modal-title" id="contactFormModalLabel">Schedule a Demo</h5>
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<!-- Left side with agenda -->
+					<div class="col-md-5 border-end border-secondary">
+						<div class="mb-4">
+							<strong class="fs-4">Item Orchard Demo</strong>
+							<h6 class="mt-4">What you'll see:</h6>
+							<ul>
+								<li>Interactive knowledge graphs</li>
+								<li>Standards mapping tools</li>
+								<li>Curriculum alignment capabilities</li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- Right side with form -->
+					<div class="col-md-7">
+						<!-- Form START -->
+						<form class="contact-form form-dark form-line mt-4" id="popup-contact-form" name="popupcontactform" method="POST" action="send_email.php">
+							<div class="row">
+								<div class="col-md-12">
+									<!-- name -->
+									<div class="mb-3 position-relative">
+										<input required id="popup-name" name="name" type="text" class="form-control" placeholder="Your Name *" style="width: 100%; margin-left: 0; padding-left: 0;">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<!-- Organization Name -->
+									<div class="mb-3 position-relative">
+										<input required id="popup-organization" name="organization" type="text" class="form-control" placeholder="School/District/Organization *" style="width: 100%; margin-left: 0; padding-left: 0;">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<!-- Role -->
+									<div class="mb-3 position-relative">
+										<select required id="popup-role" name="role" class="form-select form-control" style="width: 100%; margin-left: 0; padding-left: 0; border-radius: 0;" aria-label="Role">
+											<option value="" selected style="color: var(--bs-gray-500);">Your Role *</option>
+											<option value="Teacher" style="color: #000000;">&nbsp;&nbsp;&nbsp;Teacher</option>
+											<option value="Principal" style="color: #000000;">&nbsp;&nbsp;&nbsp;Principal</option>
+											<option value="Curriculum Director" style="color: #000000;">&nbsp;&nbsp;&nbsp;Curriculum Director</option>
+											<option value="IT Administrator" style="color: #000000;">&nbsp;&nbsp;&nbsp;IT Administrator</option>
+											<option value="Superintendent" style="color: #000000;">&nbsp;&nbsp;&nbsp;Superintendent</option>
+											<option value="Other" style="color: #000000;">&nbsp;&nbsp;&nbsp;Other</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<!-- Email -->
+									<div class="mb-3 position-relative">
+										<input required id="popup-email" name="email" type="email" class="form-control" placeholder="Email *" style="width: 100%; margin-left: 0; padding-left: 0;">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<!-- Message -->
+									<div class="mb-3 position-relative">
+										<textarea id="popup-message" name="message" cols="40" rows="4" class="form-control" placeholder="Any specific questions or areas of interest?"></textarea>
+									</div>
+								</div>
+								<!-- submit button -->
+								<div class="col-md-12 text-start">
+									<button class="btn btn-primary-custom rounded-pill" style="width: 200px;" type="submit">Request Demo</button>
+								</div>
+							</div>
+						</form>
+						<!-- Form END -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor-dot-outline"></div>
+<div class="cursor-dot"></div>
+
+<!-- Back to top -->
+<div class="back-top">
+	<div class="scroll-line"></div>
+	<span class="scoll-text">Go Up</span>
+</div>
+
+<!-- JS libraries, plugins and custom scripts -->
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Vendors -->
+<script src="assets/vendor/glightbox/js/glightbox.js"></script>
+<script src="assets/vendor/jarallax/jarallax.min.js"></script>
+<script src="assets/vendor/tiny-slider/tiny-slider.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<!-- Template Functions -->
+<script src="assets/js/functions.js"></script>
+
+<script>
+	// Function to trigger the modal from any element with data-toggle="contact-modal" attribute
+	document.addEventListener('DOMContentLoaded', function() {
+		const triggers = document.querySelectorAll('[data-toggle="contact-modal"]');
+		triggers.forEach(trigger => {
+			trigger.addEventListener('click', function(e) {
+				e.preventDefault();
+				const contactModal = new bootstrap.Modal(document.getElementById('contactFormModal'));
+				contactModal.show();
+			});
+		});
+	});
+</script>
+</body>
+</html>

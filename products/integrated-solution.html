@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orchard Education Platforms | PDF Brochure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Print-specific styles */
+        @media print {
+            @page {
+                size: letter;
+                margin: 0.5in;
+            }
+            
+            .page-break {
+                page-break-after: always;
+                break-after: page;
+            }
+            
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+            
+            header {
+                position: relative !important;
+            }
+
+            .section {
+                break-inside: avoid;
+            }
+        }
+
+        /* Use Cases Section Styles */
+        .use-cases-section {
+            padding: 4rem 0;
+            background-color: transparent;
+        }
+
+        .use-cases-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .use-case-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            padding: 1.8rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .publisher-header {
+            background: linear-gradient(135deg, #1c3c6e, #2a5ca0);
+        }
+
+        .assessment-header {
+            background: linear-gradient(135deg, #4285F4, #5e97f5);
+        }
+
+        .card-header i {
+            font-size: 2rem;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 1.8rem;
+        }
+
+        .card-content p {
+            margin-bottom: 1.2rem;
+            color: #555;
+        }
+
+        .card-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card-content li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .card-content li:last-child {
+            border-bottom: none;
+        }
+
+        .bullet-point {
+            width: 8px;
+            height: 8px;
+            background-color: #4285F4;
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .card-content strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .use-cases-container {
+                flex-direction: column;
+            }
+            
+            .use-case-card {
+                width: 100%;
+            }
+        }
+
+        /* Card-style Comparison Table */
+        .card-comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        /* Header styling */
+        .card-comparison-table thead {
+            background-color: #1c3c6e;
+            color: white;
+        }
+
+        .card-comparison-table th {
+            padding: 1.2rem 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .card-comparison-table .feature-header {
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .card-comparison-table .product-header {
+            background-color: #1c3c6e;
+            color: white;
+            padding: 1.5rem 1rem;
+        }
+
+        /* Body styling */
+        .card-comparison-table tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .card-comparison-table tbody tr:nth-child(odd) td:not(:first-child) {
+            background-color: rgba(248, 249, 250, 0.5);
+        }
+
+        .card-comparison-table td {
+            padding: 1.2rem 1rem;
+            text-align: center;
+            vertical-align: middle;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .card-comparison-table td:first-child {
+            background-color: #f8f9fa;
+            text-align: left;
+            font-weight: 500;
+            padding-left: 1.5rem;
+        }
+
+        /* Check and minus symbols */
+        .check-circle {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .check-circle::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%) rotate(45deg);
+            width: 6px;
+            height: 12px;
+            border-bottom: 2px solid white;
+            border-right: 2px solid white;
+        }
+
+        .minus-line {
+            display: inline-block;
+            width: 20px;
+            height: 4px;
+            background-color: #bdbdbd;
+            border-radius: 2px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .card-comparison-table {
+                font-size: 0.85rem;
+            }
+            
+            .card-comparison-table th,
+            .card-comparison-table td {
+                padding: 1rem 0.5rem;
+            }
+            
+            .check-circle {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .check-circle::after {
+                width: 5px;
+                height: 10px;
+            }
+        }
+
+        /* Common Variables */
+        :root {
+            --graphx-primary: #1c3c6e;
+            --graphx-secondary: #d269e6;
+            --learnx-primary: #002133;
+            --learnx-blue: #1c3c6e;
+            --learnx-red: #EA4335;
+            --learnx-yellow: #FBBC05;
+            --background-light: #f4f4f8;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .container-fluid {
+            width: 100%;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--graphx-primary), var(--learnx-blue));
+            color: var(--text-light);
+            padding: 1rem 0;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .download-btn {
+    background: linear-gradient(200deg,#ff7b30, #e74412); /* Gradient from orange-red to yellowish-green */
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: normal;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: linear-gradient(200deg, #e74412, #ff7b30); /* Reversed gradient on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+        .document-title {
+            text-align: right;
+            font-size: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--graphx-primary), var(--learnx-blue));
+            color: var(--text-light);
+            padding: 1rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            max-width: 1000 px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+    font-size: 2rem;
+    color: var(--graphx-primary);
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--graphx-secondary), var(--learnx-blue));
+    border-radius: 2px;
+}
+
+        .section-description {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Platform Cards */
+        .platforms-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.platform-card {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+        .platform-header {
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .graphx-header {
+            background: linear-gradient(135deg, var(--graphx-primary), var(--graphx-secondary));
+        }
+
+        .learnx-header {
+            background: linear-gradient(135deg, var(--learnx-primary), var(--learnx-blue));
+        }
+
+        .platform-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .platform-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .platform-content {
+            padding: 1.5rem;
+        }
+
+        .platform-description {
+            margin-bottom: 1rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+        
+        .features-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card {
+            background-color: var(--background-light);
+            border-radius: 8px;
+            padding: 1.2rem;
+        }
+
+        .feature-card i {
+            color: var(--graphx-primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background-color: var(--background-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .toc-title {
+            font-size: 1.3rem;
+            color: var(--graphx-primary);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--graphx-secondary);
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-item {
+            margin-bottom: 0.8rem;
+            display: flex;
+        }
+        
+        .toc-item-number {
+            color: var(--graphx-secondary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+            min-width: 1.5rem;
+        }
+        
+        .toc-item-text {
+            flex: 1;
+        }
+        
+        .toc-item-dots {
+            flex: 1;
+            border-bottom: 1px dotted #ccc;
+            margin: 0 0.5rem;
+            position: relative;
+            top: -5px;
+        }
+        
+        .toc-item-page {
+            color: var(--graphx-primary);
+            font-weight: bold;
+        }
+
+        /* Integration Section */
+        .integration-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .platform-box {
+            width: 3in;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+        }
+
+        .graphx-box {
+            background: linear-gradient(135deg, var(--graphx-primary), var(--graphx-secondary));
+        }
+
+        .learnx-box {
+            background: linear-gradient(135deg, var(--learnx-primary), var(--learnx-blue));
+        }
+
+        .connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 2in;
+        }
+
+        .connector::before {
+            content: '';
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(to right, var(--graphx-secondary), var(--learnx-blue));
+            position: absolute;
+        }
+
+        .connector-icon {
+            background-color: white;
+            border: 4px solid var(--graphx-secondary);
+            color: var(--graphx-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-list i {
+            color: var(--graphx-secondary);
+            margin-right: 0.5rem;
+            min-width: 16px;
+            margin-top: 4px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--background-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            color: var(--graphx-primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-method i {
+            color: var(--graphx-primary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-dark);
+            opacity: 0.7;
+            font-size: 0.9rem;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <header>
+        <div class="container-fluid header-bg">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-container">
+                        <img src="ItemOrchardLLC.png" alt="Item Orchard LLC" class="company-logo" style="height: 75px; width: auto;">
+                    </div>
+                    <div class="header-actions">
+                        <a href="Integrated_Brochure.pdf" download class="download-btn">
+                            <i class="fas fa-download"></i> Download Brochure
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Comprehensive Educational Content Solutions</h1>
+                <h2 class="hero-subtitle">Curriculum Intelligence & Content Customization</h2>
+                <p class="hero-description">
+                    Discover our integrated platforms for curriculum standards visualization, content analysis, and assessment customization. Transform your educational content strategy with our powerful, flexible tools.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        
+
+        <section class="section">
+            <h2 class="section-title">Our Platforms</h2>
+            <p class="section-description">
+                Item Orchard LLC offers two powerful, complementary platforms designed to meet the needs of educational publishers and content developers. Each platform can be used independently or together for a comprehensive solution.
+            </p>
+
+            <div class="platforms-container">
+                <div class="platform-card">
+                    <div class="platform-header graphx-header">
+                        <h3 class="platform-title">
+                            <img src="OrchardGraphX.png" alt="OrchardGraphX Logo" style="height: 75px; vertical-align: middle; margin-right: 10px;">
+                        </h3>
+                        <p class="platform-subtitle">Curriculum Intelligence Platform</p><br>
+                    </div>
+                    <div class="platform-content">
+                        <p class="platform-description">
+                            Transform curriculum standards into interactive knowledge with unprecedented clarity. Visualize relationships between standards, content, and learning progressions to drive curriculum decisions with data-backed insights.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Graph-Driven Intelligence for standards visualization</li>
+                            <li><i class="fas fa-check-circle"></i> AI-Powered curriculum insights</li>
+                            <li><i class="fas fa-check-circle"></i> Multi-State Standards Mapping & alignment</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced reporting & analytics</li>
+                            <li><i class="fas fa-check-circle"></i> Flexible export options with no vendor lock-in</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-header learnx-header">
+                        <h3 class="platform-title">
+                            <img src="OrchardLearnX.png" alt="OrchardLearnX Logo" style="height: 75px; vertical-align: middle; margin-right: 10px;">
+                        </h3>
+                        <p class="platform-subtitle">Content Analysis & <nobr>Customization Platform</nobr></p><br>
+                    </div>
+                    <div class="platform-content">
+                        <p class="platform-description">
+                            Enable custom item banks, form builders, and visualizations—all driven by a robust, flexible JSON framework. Offer your clients a branded, simplified assessment interface without needing complex <br>third-party platforms.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Advanced content filtering and organization</li>
+                            <li><i class="fas fa-check-circle"></i> Real-time knowledge graph visualization</li>
+                            <li><i class="fas fa-check-circle"></i> Dynamic form generation & customization</li>
+                            <li><i class="fas fa-check-circle"></i> Professional print-ready assessment export</li>
+                            <li><i class="fas fa-check-circle"></i> Comprehensive usage analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Break -->
+        <div class="page-break"></div>
+        
+        <!-- Platform Comparison -->
+        <section class="section">
+            <h2 class="section-title">Platform Comparison</h2>
+            <p class="section-description">
+                Compare the features and focus areas of our educational platforms to determine which solution best fits your needs.
+            </p>
+            
+            <table class="card-comparison-table">
+                <thead>
+                    <tr>
+                        <th class="feature-header">Feature</th>
+                        <th class="product-header">OrchardGraphX</th>
+                        <th class="product-header">OrchardLearnX</th>
+                        <th class="product-header">Integrated Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Standards Visualization</td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="minus-line"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Multi-State Standards Mapping</td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="minus-line"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Content Development</td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Assessment Creation</td>
+                        <td><span class="minus-line"></span></td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Print-Ready Output</td>
+                        <td><span class="minus-line"></span></td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Knowledge Graph Visualization</td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Advanced Analytics</td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Cross-Platform Data Flow</td>
+                        <td><span class="minus-line"></span></td>
+                        <td><span class="minus-line"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Export Options</td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>API Integration</td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                        <td><span class="check-circle"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Page Break -->
+        <div class="page-break"></div>
+
+        <section class="section">
+            <h2 class="section-title">OrchardGraphX Details</h2>
+            <p class="section-description">
+                Visualize relationships between standards, content, and learning progressions with unprecedented clarity. Drive curriculum decisions with data-backed insights.
+            </p>
+
+            <h3 style="margin-bottom: 1rem; color: var(--graphx-primary);">Why OrchardGraphX?</h3>
+            <div class="features-grid-3">
+                <div class="feature-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h4>Graph-Driven Intelligence</h4>
+                    <p>Unlike static spreadsheets, our knowledge graph reveals how standards, lessons, and progressions interact in real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>AI-Powered Insights</h4>
+                    <p>Uncover hidden connections and optimize curriculum alignment with advanced analytics.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h4>Multi-State Standards Mapping</h4>
+                    <p>Seamlessly align and compare standards across different educational frameworks.</p>
+                </div>
+            </div>
+
+            <h3 style="margin: 1.5rem 0 1rem; color: var(--graphx-primary);">Benefits for Educational Publishers</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h4>Data-Driven Curriculum Design</h4>
+                    <p>Use visual analytics to inform curriculum development priorities and identify content gaps and opportunities.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-align-center"></i>
+                    <h4>Comprehensive Standards Alignment</h4>
+                    <p>Easily track how your materials align across different state standards and demonstrate comprehensive coverage.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-edit"></i>
+                    <h4>Optimized Content Development</h4>
+                    <p>Prioritize content creation based on identified gaps and ensure complete standards coverage.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Enhanced Sales Support</h4>
+                    <p>Equip your sales team with powerful visual tools to demonstrate standards alignment to districts and schools.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Break -->
+        <div class="page-break"></div>
+
+        <section class="section">
+            <h2 class="section-title">OrchardLearnX Details</h2>
+            <p class="section-description">
+                Content Analysis & Customization Platform for educational publishers and assessment developers.
+            </p>
+
+            <h3 style="margin-bottom: 1rem; color: var(--learnx-primary);">Key Features</h3>
+            <div class="features-grid-3">
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h4>Advanced Filtering</h4>
+                    <p>Filter items by standards, DOK, question type, language, and more—all in one unified interface.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-database"></i>
+                    <h4>Real-Time Visualization</h4>
+                    <p>See your item bank as an interactive knowledge graph to explore relationships and structure.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wrench"></i>
+                    <h4>Form Generation</h4>
+                    <p>Dynamically build item authoring forms based on user selections and templates.</p>
+                </div>
+            </div>
+
+            <h3 style="margin: 1.5rem 0 1rem; color: var(--learnx-primary);">Advanced Printing Capabilities</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-print"></i>
+                    <h4>Print-Ready Assessments</h4>
+                    <p>Convert digital activities into professionally formatted printable documents with customizable layouts.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h4>PDF Generation</h4>
+                    <p>Export assessments as high-quality PDFs with proper pagination, headers, footers, and answer keys.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-th"></i>
+                    <h4>Custom Layout Templates</h4>
+                    <p>Choose from multiple print layouts or create custom templates with your organization's branding.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-key"></i>
+                    <h4>Automatic Answer Sheets</h4>
+                    <p>Generate separate student and teacher versions of assessments with answer keys and scoring guides.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Break -->
+        <div class="page-break"></div>
+
+        <section class="section">
+            <h2 class="section-title">Integrated Solution</h2>
+            <p class="section-description">
+                While each platform offers powerful standalone functionality, together they create a comprehensive ecosystem for educational content development, analysis, and delivery.
+            </p>
+
+            <div class="integration-diagram">
+                <div class="platform-box graphx-box">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">OrchardGraphX</h4>
+                    <p>Curriculum & <nobr>Standards Visualization</nobr></p>
+                </div>
+                
+                <div class="connector">
+                    <div class="connector-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="platform-box learnx-box">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">OrchardLearnX</h4>
+                    <p>Content Analysis & <br>Assessment</p>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h4>Seamless Data Flow</h4>
+                    <p>Standards data from GraphX flows to LearnX for content tagging and assessment alignment, creating a continuous improvement cycle.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Comprehensive Analytics</h4>
+                    <p>Combine curriculum coverage data with assessment performance for unprecedented insights into <nobr>content effectiveness.</nobr></p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tasks"></i>
+                    <h4>Streamlined Workflow</h4>
+                    <p>Move from curriculum planning to assessment creation in a unified ecosystem, eliminating data <nobr>transfer challenges.</nobr></p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Targeted Development</h4>
+                    <p>Identify specific content gaps in GraphX and immediately create aligned assessments in LearnX to address them.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section use-cases-section">
+            <h2 class="section-title">Use Cases</h2>
+            <p class="section-description">
+                Discover how our platforms address specific challenges in curriculum development, content management, and assessment creation.
+            </p>
+        
+            <div class="use-cases-container">
+                <div class="use-case-card">
+                    <div class="card-header publisher-header">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Educational Publishers</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Maximize the value and alignment of your educational content:</p>
+                        
+                        <div class="feature-item">
+                            <div class="feature-label">
+                                <span class="bullet-point"></span>
+                                <strong>Standards Coverage Analysis:</strong>
+                            </div>
+                            <div class="feature-description">
+                                Ensure comprehensive coverage across all relevant educational standards
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-label">
+                                <span class="bullet-point"></span>
+                                <strong>Content Mapping:</strong>
+                            </div>
+                            <div class="feature-description">
+                                Visualize how different content assets connect to standards and to each other
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-label">
+                                <span class="bullet-point"></span>
+                                <strong>Cross-State Alignment:</strong>
+                            </div>
+                            <div class="feature-description">
+                                Ensure materials work effectively across multiple state standards systems for national distribution
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-label">
+                                <span class="bullet-point"></span>
+                                <strong>Adoption Bid Support:</strong>
+                            </div>
+                            <div class="feature-description">
+                                Demonstrate comprehensive standards coverage for state adoptions
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="use-case-card">
+                    <div class="card-header assessment-header">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Assessment Creators</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Streamline assessment creation with powerful tools:</p>
+                        
+                        <div class="feature-item">
+                            <div class="feature-label">
+                                <span class="bullet-point"></span>
+                                <strong>Custom Assessment Generation:</strong>
+                            </div>
+                            <div class="feature-description">
+                                Create targeted assessments aligned to specific standards
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-label">
+                                <span class="bullet-point"></span>
+                                <strong>Professional Print Output:</strong>
+                            </div>
+                            <div class="feature-description">
+                                Generate print-ready assessments with answer keys and scoring guides
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-label">
+                                <span class="bullet-point"></span>
+                                <strong>Content Customization:</strong>
+                            </div>
+                            <div class="feature-description">
+                                Tailor assessments for different learning needs and contexts
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-label">
+                                <span class="bullet-point"></span>
+                                <strong>Standards-Based Reporting:</strong>
+                            </div>
+                            <div class="feature-description">
+                                Track and report on standards coverage across assessment sets
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Break -->
+        <div class="page-break"></div>
+
+        <section class="contact-section">
+            <h2 class="contact-title">Ready to Transform Your Educational Content Strategy?</h2>
+            <p>Contact us today to schedule a personalized demo and consultation.</p>
+            
+            <div class="contact-info">
+                <div class="contact-method">
+                    <a href="mailto:itemorchardllc@gmail.com" style="display: flex; align-items: center; gap: 0.5rem; color: #1c3c6e; text-decoration: none;">
+                        <i class="fas fa-envelope" style="color: #1c3c6e;"></i>
+                        <span>itemorchardllc@gmail.com</span>
+                    </a>
+                </div>
+                
+                <div class="contact-method">
+                    <a href="https://www.itemorchardllc.com" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: #1c3c6e; text-decoration: none;">
+                        <i class="fas fa-globe" style="color: #1c3c6e;"></i>
+                        <span>www.itemorchardllc.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Item Orchard LLC. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Optional: Add this script if you want to automatically open the print dialog when the page loads
+        /*
+        window.onload = function() {
+            setTimeout(function() {
+                window.print();
+            }, 1000);
+        };
+        */
+    </script>
+</body>
+</html>

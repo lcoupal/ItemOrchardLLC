@@ -1,0 +1,307 @@
+/* Custom styles for Item Orchard LLC website */
+
+:root {
+    --primary-color: #1c3c6e;
+    --secondary-color: #d269e6;
+    --accent-color: #17a2b8;
+    --dark-bg: #002133;
+    --light-bg: #f4f4f8;
+    --text-dark: #333;
+    --text-light: #fff;
+}
+
+/* Process Timeline styles */
+.process-timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.process-step {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.process-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.process-line {
+    position: absolute;
+    top: 50px;
+    left: 25px;
+    width: 4px;
+    height: calc(100% + 2rem);
+    background-color: var(--primary-color);
+    z-index: 1;
+}
+
+.process-step:last-child .process-line {
+    display: none;
+}
+
+.process-content {
+    max-width: 80%;
+}
+
+/* Client card styles */
+.client-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 2rem;
+    margin-top: -40px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Primary button custom styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #15325d;
+    border-color: #15325d;
+}
+
+.btn-primary-custom {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    color: var(--text-dark) !important;
+}
+
+.btn-primary-custom:hover {
+    background-color: #149ab0 !important;
+    border-color: #149ab0 !important;
+}
+
+.btn-primary-outline {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-color: transparent;
+}
+
+.btn-primary-outline:hover {
+    color: var(--text-light);
+    background-color: var(--primary-color);
+}
+
+/* Custom text colors */
+.text-primary-custom {
+    color: var(--accent-color) !important;
+}
+
+.bg-primary-custom {
+    background-color: var(--accent-color) !important;
+}
+
+.bg-primary-custom-multiply {
+    background-color: var(--accent-color);
+    mix-blend-mode: multiply;
+}
+
+.text-white-stroke {
+    -webkit-text-stroke: 1px var(--primary-color);
+    color: white !important;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.text-white-stroke-thick {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    text-shadow: 0 0 25px rgba(23, 162, 184, 0.4);
+}
+
+.text-primary-shadow {
+    text-shadow: 0 0 40px var(--accent-color);
+}
+
+/* Footer line */
+.footer-top-line {
+    background-color: var(--accent-color) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .process-content {
+        max-width: 75%;
+    }
+    
+    .client-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-top: -30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .process-content {
+        max-width: 70%;
+    }
+    
+    .process-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .process-line {
+        top: 40px;
+        left: 20px;
+    }
+}
+
+/* Service cards styling */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Timeline item styling */
+.timeline-item {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    max-width: calc(100% - 60px);
+}
+
+/* Custom carousel styling */
+.custom-carousel .carousel-inner {
+    overflow: visible;
+}
+
+.custom-carousel .carousel-item {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    display: block;
+    width: 100%;
+}
+
+.custom-carousel .carousel-item.active {
+    opacity: 1;
+}
+
+/* Card hover effects */
+.feature-card {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Custom form styling */
+.form-dark .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+}
+
+.form-dark .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-dark .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-color);
+}
+
+/* Custom cursor */
+.cursor-dot-outline {
+    pointer-events: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(23, 162, 184, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+.cursor-dot {
+    pointer-events: none;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Back to top button */
+.back-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-radius: 50%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-line {
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background-color: var(--text-light);
+    animation: scrollLine 1.5s ease infinite;
+}
+
+@keyframes scrollLine {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.scoll-text {
+    font-size: 0;
+    position: absolute;
+    bottom: -20px;
+}
+
+.back-top:hover .scoll-text {
+    font-size: 12px;
+}
